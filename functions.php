@@ -21,7 +21,7 @@ if (function_exists('add_theme_support'))
 \*------------------------------------*/
 function custom_nav()
 {
-	wp_nav_menu(
+	/*wp_nav_menu(
 	array(
 		'theme_location'  => 'header-menu',
 		'menu'            => '',
@@ -40,7 +40,18 @@ function custom_nav()
 		'depth'           => 0,
 		'walker'          => ''
 		)
-	);
+	);*/
+    wp_nav_menu( array(
+        'theme_location'    => 'header-menu',
+        'depth'             => 2,
+        'container'         => 'div',
+        'container_class'   => 'menu-{menu slug}-container collapse navbar-collapse',
+        'container_id'      => 'bs-example-navbar-collapse-1',
+        'menu_class'        => 'menu nav navbar-nav',
+        'echo'              => true,
+        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+        'walker'            => new WP_Bootstrap_Navwalker(),
+    ) );
 }
 
 function header_scripts()
@@ -57,7 +68,7 @@ function header_scripts()
         wp_enqueue_script('jquery'); // Enqueue it!*/
 
 
-        wp_register_script('bootstrap', get_template_directory_uri() . '/js/lib/bootstrap.min.js', array(), '2.7.1'); // bootstrap
+        wp_register_script('bootstrap', get_template_directory_uri() . '/js/lib/bootstrap.min.js', array('jquery'), '2.7.1'); // bootstrap
         wp_enqueue_script('bootstrap'); // Enqueue it!
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
@@ -267,3 +278,12 @@ function custom_shortcode($atts, $content = null)
  * Loads all the needed files for setting up the theme
  */
 require "plugins/advanced-custom-fields/acf.php";
+
+
+if ( ! file_exists( get_template_directory() . '/includes/class-wp-bootstrap-navwalker.php' ) ) {
+    // file does not exist... return an error.
+    return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
+} else {
+    // file exists... require it.
+    require_once get_template_directory() . '/includes/class-wp-bootstrap-navwalker.php';
+}
