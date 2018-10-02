@@ -1,3 +1,11 @@
 @import "base/reset";
 @import "base/variables";
 @import "base/typography";
+@import "sections/navigation";
+@import "sections/header";
+@import "sections/logo";
+
+body{
+    background-color: $theme-light-bg-color;
+}
+

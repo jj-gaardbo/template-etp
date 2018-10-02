@@ -1,0 +1,28 @@
+.navigation{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: $theme-dark-blue;
+
+    ul{
+        float: right;
+
+        li{
+            padding-left: 20px;
+            display: inline-block;
+        }
+
+    }
+
+    ul li a{
+        color: $theme-white;
+        -webkit-transition: color 0.2s ease;
+        -moz-transition: color 0.2s ease;
+        -o-transition: color 0.2s ease;
+        -ms-transition: color 0.2s ease;
+        transition: color 0.2s ease;
+        &:hover{
+            color: $theme-logo-brown;
+            text-decoration: none;
+        }
+    }
+}
