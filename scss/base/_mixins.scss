@@ -1,5 +1,5 @@
 // Respond above.
-@mixin respond-above($breakpoint) {
+@mixin respond-below($breakpoint) {
 
     // If the breakpoint exists in the map.
     @if map-has-key($breakpoints, $breakpoint) {
@@ -8,7 +8,7 @@
         $breakpoint-value: map-get($breakpoints, $breakpoint);
 
         // Write the media query.
-        @media (min-width: $breakpoint-value) {
+        @media (max-width: $breakpoint-value) {
             @content;
         }
 

@@ -45,8 +45,27 @@
 
 .fp-slide-content{
 
+    &:before{
+        z-index: -1;
+        content: '';
+        display: block;
+        position: absolute;
+        background-image: url(../img/pattern.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 600px;
+        width: 600px;
+        opacity: 0.2;
+        right: 0;
+        top: 10%;
+    }
+
     &.topleft, &.topright{
         margin-top: 15vh;
+        &:before{
+            left: 0;
+            top: 50%;
+        }
     }
 
     &.bottomleft, &.bottomright{
