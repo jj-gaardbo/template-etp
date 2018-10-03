@@ -53,9 +53,9 @@
         background-image: url(../img/pattern.png);
         background-size: cover;
         background-repeat: no-repeat;
-        height: 600px;
-        width: 600px;
-        opacity: 0.2;
+        height: 500px;
+        width: 500px;
+        opacity: 1;
         right: 0;
         top: 10%;
     }
@@ -63,13 +63,19 @@
     &.topleft, &.topright{
         margin-top: 15vh;
         &:before{
-            left: 0;
-            top: 50%;
+            right: 0;
+            bottom: 20%;
+            transform: rotate(100deg);
         }
     }
 
     &.bottomleft, &.bottomright{
         margin-top: 40vh;
+        &:before{
+            left: 0;
+            top: 50%;
+            transform: rotate(-45deg);
+        }
     }
 
     margin-top: 25vh;
