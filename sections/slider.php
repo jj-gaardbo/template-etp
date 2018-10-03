@@ -23,11 +23,16 @@ if( have_rows('fp_slider') ):?>
 
                         <div class="container">
 
-                            <div class="row">
+                            <?php
+                                $pos = get_sub_field('fp_slider_box');
+                                $align = ($pos == 'topright' || $pos == 'bottomright') ? 'justify-content-end' : 'justify-content-start';
+                            ?>
+
+                            <div class="row <?php echo $align; ?>">
 
                                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 
-                                    <div class="fp-slide-content clear">
+                                    <div class="fp-slide-content <?php echo $pos;?> clear">
 
                                         <h1><?php the_sub_field('fp_slider_heading') ?></h1>
 
