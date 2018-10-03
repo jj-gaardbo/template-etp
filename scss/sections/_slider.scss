@@ -1,0 +1,24 @@
+.fp-slider>div
+{
+    z-index: -1;
+    width: 100%;
+    height: calc( 100vh - #{$header-height});
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.fp-slider>div>div{
+    width: 100%;
+    height: calc( 100vh - #{$header-height});
+}
+
+.fp-slider>div>div>div{
+    width: 100%;
+    height: calc( 100vh - #{$header-height});
+}
+
+.fp-slider-inner{
+    height: calc( 100vh - #{$header-height});
+    overflow: hidden;
+}

@@ -3,10 +3,12 @@
 get_header();
 ?>
 
-<main role="main">
 
-    <h1>Forside</h1>
+    <?php require_once get_template_directory() . '/sections/navigation.php';?>
 
-</main>
+    <?php require_once get_template_directory() . '/sections/headerDOM.php';?>
+
+    <?php require_once get_template_directory() . '/sections/slider.php';?>
+
 
 <?php get_footer(); ?>

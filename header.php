@@ -26,54 +26,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-<!--        <nav class="navigation row clear">
 
-            <div class="container">
+    <!-- wrapper -->
+    <div class="container-fluid">
 
-                <div class="col-md-12 col-xl-12">
-
-                    <span class="toggle-menu"></span>
-                    <?php /*custom_nav(); */?>
-
-                </div>
-
-            </div>
-
-        </nav>-->
-
-        <nav class="navigation navbar navbar-expand-md row clear" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <?php
-                custom_nav()
-                ?>
-            </div>
-        </nav>
-
-        <!-- header -->
-        <header class="header row clear" role="banner">
-
-            <div class="container">
-
-                <div class="col-md-12 col-xl-12">
-
-                    <!-- logo -->
-                    <div class="logo">
-                        <a href="<?php echo home_url(); ?>">
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
-                        </a>
-                    </div>
-                    <!-- /logo -->
-
-                </div>
-
-            </div>
-
-        </header>
-        <!-- /header -->
-
-		<!-- wrapper -->
-		<div class="wrapper">

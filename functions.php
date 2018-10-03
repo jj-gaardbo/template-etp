@@ -68,8 +68,11 @@ function header_scripts()
         wp_enqueue_script('jquery'); // Enqueue it!*/
 
 
-        wp_register_script('bootstrap', get_template_directory_uri() . '/js/lib/bootstrap.min.js', array('jquery'), '2.7.1'); // bootstrap
+        wp_register_script('bootstrap', get_template_directory_uri() . '/js/lib/bootstrap.min.js', array('jquery')); // bootstrap
         wp_enqueue_script('bootstrap'); // Enqueue it!
+
+        wp_register_script('jssorslider', get_template_directory_uri() . '/js/lib/jssor.slider.min.js', array('jquery')); // jssor slider
+        wp_enqueue_script('jssorslider'); // Enqueue it!
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
@@ -79,7 +82,7 @@ function header_scripts()
 // Load styles
 function load_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . 'css/normalize.css', array(), '1.0', 'all');
+    wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
@@ -277,7 +280,7 @@ function custom_shortcode($atts, $content = null)
 /**
  * Loads all the needed files for setting up the theme
  */
-require "plugins/advanced-custom-fields/acf.php";
+//require "plugins/advanced-custom-fields/acf.php";
 
 
 if ( ! file_exists( get_template_directory() . '/includes/class-wp-bootstrap-navwalker.php' ) ) {
@@ -287,3 +290,17 @@ if ( ! file_exists( get_template_directory() . '/includes/class-wp-bootstrap-nav
     // file exists... require it.
     require_once get_template_directory() . '/includes/class-wp-bootstrap-navwalker.php';
 }
+
+function custom_vars() {
+
+    global $wp_query;
+    $vars = array(
+        'pageTemplate' => get_page_template_slug(),
+    );
+
+    wp_localize_script( 'html5blankscripts', 'GlobalVars', $vars );
+}
+
+add_action ('wp_enqueue_scripts', 'custom_vars');
+
+require_once get_template_directory() . '/includes/common.php';
