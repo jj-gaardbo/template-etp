@@ -304,3 +304,17 @@ function custom_vars() {
 add_action ('wp_enqueue_scripts', 'custom_vars');
 
 require_once get_template_directory() . '/includes/common.php';
+
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png);
+            height:126px;
+            width:201px;
+            background-size: 201px 126px;
+            background-repeat: no-repeat;
+            padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );

@@ -1,5 +1,9 @@
 <?php /* Template Name: Demo Page Template */ get_header(); ?>
 
+<?php require_once get_template_directory() . '/sections/navigation.php';?>
+
+<?php require_once get_template_directory() . '/sections/headerDOM.php';?>
+
 	<main role="main">
 		<!-- section -->
 		<section>

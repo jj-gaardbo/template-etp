@@ -14,8 +14,21 @@
             return;
         }
 
+
+
+
+        var transitions = [
+            {$Duration:800,$Opacity:2}
+        ];
+
+
         var options = {
             $AutoPlay: 1,
+            $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: transitions,
+                $TransitionsOrder: 1
+            },
             $SlideDuration: 1500,
             $LazyLoading: true,
             $Loop: 1,
