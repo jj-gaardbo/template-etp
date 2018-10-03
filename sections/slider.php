@@ -2,7 +2,8 @@
 // check if the repeater field has rows of data
 if( have_rows('fp_slider') ):?>
 
-<div class="row">
+<section class="fp-slider-section row">
+
     <div class="fp-slider-grad"></div>
     <div class="<?php echo get_full_width_classes();?>">
 
@@ -59,6 +60,6 @@ if( have_rows('fp_slider') ):?>
 
     </div>
 
-</div>
+</section>
 
 <?php endif; ?>

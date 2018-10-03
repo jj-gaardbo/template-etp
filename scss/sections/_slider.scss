@@ -1,3 +1,9 @@
+.fp-slider-section{
+    position: relative;
+    z-index: 1;
+    margin-bottom: -$quick-link-height;
+}
+
 .fp-slider>div
 {
     z-index: 1;
@@ -39,28 +45,15 @@
 
 .fp-slide-content{
 
-    &.topleft{
-        margin-top: 20vh;
+    &.topleft, &.topright{
+        margin-top: 15vh;
     }
 
-    &.bottomleft{
-        margin-top: 45vh;
-    }
-
-    &.topright{
-        margin-top: 20vh;
-    }
-
-    &.bottomright{
-        margin-top: 45vh;
+    &.bottomleft, &.bottomright{
+        margin-top: 40vh;
     }
 
     margin-top: 25vh;
-/*    -webkit-transform-origin: translateY(-50%);
-    -moz-transform-origin: translateY(-50%);
-    -ms-transform-origin: translateY(-50%);
-    -o-transform-origin: translateY(-50%);
-    transform-origin: translateY(-50%);*/
     background-color: $theme-logo-orange;
     padding:$standard-padding;
 

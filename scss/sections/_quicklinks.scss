@@ -1,0 +1,22 @@
+.quicklinks-section{
+    position: relative;
+    z-index: 3;
+    display: block;
+    height: $quick-link-height;
+    bottom: 0;
+    background-color: $theme-light-bg-color;
+
+    .ql-item{
+        height: $quick-link-height;
+        .ql-item-inner{
+            height: $quick-link-height;
+
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            padding: $standard-padding;
+        }
+
+    }
+
+}
