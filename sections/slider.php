@@ -35,11 +35,23 @@ if( have_rows('fp_slider') ):?>
 
                                     <div class="fp-slide-content <?php echo $pos;?> clear">
 
-                                        <h1><?php the_sub_field('fp_slider_heading') ?></h1>
+                                        <?php if(get_sub_field('fp_slider_heading')):?>
 
-                                        <p><?php the_sub_field('fp_slider_excerpt') ?></p>
+                                            <h1><?php the_sub_field('fp_slider_heading') ?></h1>
 
-                                        <a href="<?php the_sub_field('fp_slider_link') ?>">Læs mere</a>
+                                        <?php endif; ?>
+
+                                        <?php if(get_sub_field('fp_slider_excerpt')):?>
+
+                                            <p><?php the_sub_field('fp_slider_excerpt') ?></p>
+
+                                        <?php endif; ?>
+
+                                        <?php if(get_sub_field('fp_slider_link')):?>
+
+                                            <a href="<?php the_sub_field('fp_slider_link') ?>">Læs mere</a>
+
+                                        <?php endif; ?>
 
                                     </div>
 

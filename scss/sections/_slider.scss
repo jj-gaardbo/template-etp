@@ -69,12 +69,29 @@
         }
     }
 
+    &.topright{
+        &:before{
+            right: 0;
+            bottom: 20%;
+            transform: rotate(150deg);
+        }
+    }
+
+
     &.bottomleft, &.bottomright{
         margin-top: 40vh;
         &:before{
             left: 0;
             top: 50%;
             transform: rotate(-45deg);
+        }
+    }
+
+    &.bottomright{
+        &:before{
+            left: 0;
+            top: 50%;
+            transform: rotate(120deg);
         }
     }
 
