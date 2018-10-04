@@ -1,6 +1,5 @@
 .bx-wrapper, .bx-viewport, .fp-slider{
     min-width: 100%;
-
     width: 100%!important;
 }
 
@@ -21,8 +20,9 @@
 }
 
 .fp-slider-grad{
+    margin-top: $header-height+$top-navitation-height;
     left:0;
-    z-index: 2;
+    z-index: 3;
     position: absolute;
     width: 100%;
     height: 140px;
@@ -52,7 +52,7 @@
     }
 
     &.topleft, &.topright{
-        margin-top: 15vh;
+        margin-top: 25vh;
         &:before{
             right: 0;
             bottom: 20%;
@@ -110,17 +110,5 @@
 
     a{
         font-size: 1.1em;
-        padding: 5px 10px;
-        background-color: $theme-dark-blue;
-        color: $theme-white;
-        -webkit-transition: color 0.2s ease;
-        -moz-transition: color 0.2s ease;
-        -o-transition: color 0.2s ease;
-        -ms-transition: color 0.2s ease;
-        transition: color 0.2s ease;
-        &:hover{
-            color: $theme-logo-brown;
-            text-decoration: none;
-        }
     }
 }

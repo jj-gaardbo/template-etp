@@ -4,49 +4,45 @@ if( have_rows('fp_slider') ):?>
 
 <section class="fp-slider-section row">
 
-    <div class="fp-slider-grad"></div>
+    <ul class="fp-slider" id="fp-slider">
 
-        <ul class="fp-slider" id="fp-slider">
+        <?php
 
-            <?php
+            // loop through the rows of data
+            while ( have_rows('fp_slider') ) : the_row(); ?>
 
-                // loop through the rows of data
-                while ( have_rows('fp_slider') ) : the_row(); ?>
+                <li class="fp-slide-item" style="background-image:url(<?php the_sub_field('fp_slider_img') ?>);">
 
-                    <li class="fp-slide-item" style="background-image:url(<?php the_sub_field('fp_slider_img') ?>);">
+                    <div class="container">
 
-                        <div class="container">
+                        <?php
+                            $pos = get_sub_field('fp_slider_box');
+                            $align = ($pos == 'topright' || $pos == 'bottomright') ? 'justify-content-end' : 'justify-content-start';
+                        ?>
 
-                            <?php
-                                $pos = get_sub_field('fp_slider_box');
-                                $align = ($pos == 'topright' || $pos == 'bottomright') ? 'justify-content-end' : 'justify-content-start';
-                            ?>
+                        <div class="row <?php echo $align; ?>">
 
-                            <div class="row <?php echo $align; ?>">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 
-                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <div class="fp-slide-content <?php echo $pos;?> clear">
 
-                                    <div class="fp-slide-content <?php echo $pos;?> clear">
+                                    <?php if(get_sub_field('fp_slider_heading')):?>
 
-                                        <?php if(get_sub_field('fp_slider_heading')):?>
+                                        <h1><?php the_sub_field('fp_slider_heading') ?></h1>
 
-                                            <h1><?php the_sub_field('fp_slider_heading') ?></h1>
+                                    <?php endif; ?>
 
-                                        <?php endif; ?>
+                                    <?php if(get_sub_field('fp_slider_excerpt')):?>
 
-                                        <?php if(get_sub_field('fp_slider_excerpt')):?>
+                                        <p><?php the_sub_field('fp_slider_excerpt') ?></p>
 
-                                            <p><?php the_sub_field('fp_slider_excerpt') ?></p>
+                                    <?php endif; ?>
 
-                                        <?php endif; ?>
+                                    <?php if(get_sub_field('fp_slider_link')):?>
 
-                                        <?php if(get_sub_field('fp_slider_link')):?>
+                                        <a class="btn-theme btn-theme-dark-blue" href="<?php the_sub_field('fp_slider_link') ?>">Læs mere</a>
 
-                                            <a href="<?php the_sub_field('fp_slider_link') ?>">Læs mere</a>
-
-                                        <?php endif; ?>
-
-                                    </div>
+                                    <?php endif; ?>
 
                                 </div>
 
@@ -54,14 +50,15 @@ if( have_rows('fp_slider') ):?>
 
                         </div>
 
-                    </li>
+                    </div>
 
-                <?php endwhile;
+                </li>
 
-            ?>
+            <?php endwhile;
 
-        </ul>
+        ?>
 
+    </ul>
 
 </section>
 

@@ -28,3 +28,8 @@
     <!-- wrapper -->
     <div class="container-fluid">
 
+        <?php require_once get_template_directory() . '/sections/topNavigation.php';?>
+
+        <?php require_once get_template_directory() . '/sections/navigation.php';?>
+
+        <?php require_once get_template_directory() . '/sections/headerDOM.php';?>

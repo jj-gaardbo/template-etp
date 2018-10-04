@@ -1,0 +1,25 @@
+.btn-theme{
+    border: none;
+    padding: 8px 10px;
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    -ms-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+.btn-theme-dark-blue{
+    background-color: $theme-dark-blue;
+    color: $theme-white;
+    &:hover{
+        color: $theme-logo-brown;
+    }
+}
+
+.btn-theme-light-bg{
+    background-color: $theme-light-bg-color;
+    color: $theme-font-color;
+    &:hover{
+        color: $theme-logo-brown;
+    }
+}

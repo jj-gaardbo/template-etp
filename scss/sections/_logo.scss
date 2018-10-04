@@ -1,5 +1,11 @@
 .logo{
     position: absolute;
-    top: -35px;
+    top: -47px;
     z-index: 5;
+    width: 201px;
+
+
+    @media (max-width: 767px) {
+        width: 140px;
+    }
 }
