@@ -5,22 +5,15 @@ if( have_rows('fp_slider') ):?>
 <section class="fp-slider-section row">
 
     <div class="fp-slider-grad"></div>
-    <div class="<?php echo get_full_width_classes();?>">
 
-        <div class="fp-slider row" id="fp-slider">
-
-            <div class="fp-slider-inner <?php echo get_full_width_classes();?>" data-u="slides">
-
+        <ul class="fp-slider" id="fp-slider">
 
             <?php
 
                 // loop through the rows of data
                 while ( have_rows('fp_slider') ) : the_row(); ?>
 
-                    <div class="fp-slide-item">
-
-                        <img data-src2="<?php the_sub_field('fp_slider_img') ?>" data-u="image"/>
-
+                    <li class="fp-slide-item" style="background-image:url(<?php the_sub_field('fp_slider_img') ?>);">
 
                         <div class="container">
 
@@ -61,16 +54,14 @@ if( have_rows('fp_slider') ):?>
 
                         </div>
 
-                    </div>
+                    </li>
 
                 <?php endwhile;
 
             ?>
-            </div>
 
-        </div>
+        </ul>
 
-    </div>
 
 </section>
 
