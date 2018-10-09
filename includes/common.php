@@ -17,7 +17,10 @@ function get_cases_cols($count){
             return "cases-col col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6";
             break;
         case 3:
-            return "cases-col col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4";
+            return "cases-col col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4";
+            break;
+        case 4:
+            return "cases-col col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3";
             break;
     }
 }

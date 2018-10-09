@@ -9,9 +9,18 @@ if( have_rows('fp_slider') ):?>
         <?php
 
             // loop through the rows of data
-            while ( have_rows('fp_slider') ) : the_row(); ?>
+            while ( have_rows('fp_slider') ) : the_row();
+                $image = get_sub_field('fp_slider_img');
+                ?>
 
-                <li class="fp-slide-item" style="background-image:url(<?php the_sub_field('fp_slider_img') ?>);">
+                <li class="fp-slide-item" style="background-image:url(<?php echo $image['sizes']['slider-size']; ?>);">
+
+                    <?php
+                    $heading = get_sub_field('fp_slider_heading');
+                    $excerpt = get_sub_field('fp_slider_excerpt');
+                    $link = get_sub_field('fp_slider_link');
+
+                    if($heading != "" || $excerpt != "" || $link != ""): ?>
 
                     <div class="container">
 
@@ -26,21 +35,21 @@ if( have_rows('fp_slider') ):?>
 
                                 <div class="fp-slide-content <?php echo $pos;?> clear">
 
-                                    <?php if(get_sub_field('fp_slider_heading')):?>
+                                    <?php if($heading):?>
 
-                                        <h1><?php the_sub_field('fp_slider_heading') ?></h1>
-
-                                    <?php endif; ?>
-
-                                    <?php if(get_sub_field('fp_slider_excerpt')):?>
-
-                                        <p><?php the_sub_field('fp_slider_excerpt') ?></p>
+                                        <h1><?php echo $heading; ?></h1>
 
                                     <?php endif; ?>
 
-                                    <?php if(get_sub_field('fp_slider_link')):?>
+                                    <?php if($excerpt):?>
 
-                                        <a class="btn-theme btn-theme-dark-blue" href="<?php the_sub_field('fp_slider_link') ?>"><?php _e('Read More','etp-consult');?></a>
+                                        <p><?php echo $excerpt; ?></p>
+
+                                    <?php endif; ?>
+
+                                    <?php if($link):?>
+
+                                        <a class="btn-theme btn-theme-dark-blue" href="<?php echo $link; ?>"><?php _e('Read More','etp-consult');?></a>
 
                                     <?php endif; ?>
 
@@ -51,6 +60,8 @@ if( have_rows('fp_slider') ):?>
                         </div>
 
                     </div>
+
+                    <?php endif; ?>
 
                 </li>
 

@@ -43,7 +43,7 @@ if( have_rows('fp_cases') ):?>
 
                     <?php if(has_excerpt($case->ID)) :?>
 
-                        <p><?php get_the_excerpt($case->ID);?></p>
+                        <p><?php echo get_the_excerpt($case->ID);?></p>
 
                     <?php else :?>
 
