@@ -13,11 +13,7 @@ body{
 }
 
 a{
-    -webkit-transition: color 0.2s ease;
-    -moz-transition: color 0.2s ease;
-    -o-transition: color 0.2s ease;
-    -ms-transition: color 0.2s ease;
-    transition: color 0.2s ease;
+    @include color_transition();
 }
 
 h1{

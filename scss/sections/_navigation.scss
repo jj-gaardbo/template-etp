@@ -48,7 +48,7 @@
             line-height: $header-height;
             position: relative;
             &.current-menu-item{
-                border-bottom: 4px solid $theme-dark-blue;
+                border-bottom: $standard-border-width solid $theme-dark-blue;
 
 
                 a{

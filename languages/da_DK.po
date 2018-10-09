@@ -67,4 +67,8 @@ msgstr "Læs Mere"
 msgid "Highlighted Cases"
 msgstr "Udvalgte Cases"
 
+msgid "Close"
+msgstr "Luk"
+
+
 

@@ -1,0 +1,96 @@
+.modal,
+.modal-box {
+    z-index: 900;
+}
+
+.modal-sandbox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,.8);
+    overflow: auto;
+}
+
+.modal-box {
+    position: relative;
+    width: 80%;
+    max-width: 920px;
+    margin: 100px auto;
+    animation-name: modalbox;
+    animation-duration: .4s;
+    animation-timing-function: cubic-bezier(0,0,.3,1.6);
+}
+
+.modal-header {
+    padding: 20px 40px;
+    background: $theme-dark-blue;
+    color: #ffffff;
+    text-align: left;
+    border-radius: 0;
+
+    span{
+        width: 100%;
+        display: block;
+        float: left;
+    }
+
+    i{
+        float: left;
+    }
+}
+
+.modal-body {
+    background: $theme-light-bg-color;
+    padding: $standard-padding;
+
+    iframe{
+        width: 100%;
+        height: 400px;
+        margin-bottom: $standard-padding;
+    }
+
+    p{
+        margin-bottom: $standard-padding;
+    }
+}
+
+/* Close Button */
+.close-modal {
+    cursor: pointer;
+}
+
+/* Animation */
+@-webkit-keyframes modalbox {
+    0% {
+        top: -250px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes modalbox {
+    0% {
+        top: -250px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}

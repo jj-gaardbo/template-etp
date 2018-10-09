@@ -11,6 +11,7 @@
 @import "sections/navigation";
 @import "sections/header";
 @import "sections/logo";
+@import "sections/modal";
 @import "sections/search_results";
 
 @import "sections/slider";
@@ -20,8 +21,6 @@
 
 
 @import "sections/footer";
-
-
 
 body{
     background-color: $theme-light-bg-color;
