@@ -11,9 +11,7 @@
         .ql-item-inner{
             height: $quick-link-height;
 
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
+            @include boxsize();
             padding: $standard-padding;
         }
 

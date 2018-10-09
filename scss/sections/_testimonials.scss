@@ -1,0 +1,22 @@
+.testimonial-section{
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    background-color: $theme-logo-brown-lighter;
+
+    .testimonial{
+
+        blockquote {
+            color: $theme-font-color;
+            font-size: 2em;
+            @include boxsize();
+            text-align: center;
+
+            i{
+                padding-right: $standard-padding;
+            }
+
+        }
+
+    }
+
+}

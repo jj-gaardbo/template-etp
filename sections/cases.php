@@ -14,7 +14,7 @@ if( have_rows('fp_cases') ):?>
 
             <div class="<?php echo get_full_width_classes();?> clearfix">
 
-                <h1>Udvalgte cases</h1>
+                <h1><?php _e('Highlighted Cases', 'etp-consult')?></h1>
 
             </div>
 

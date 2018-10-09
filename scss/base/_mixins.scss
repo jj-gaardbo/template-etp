@@ -27,3 +27,9 @@
     -o-transform: rotate($amount); /* Opera */
     transform:rotate($amount);
 }
+
+@mixin boxsize(){
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

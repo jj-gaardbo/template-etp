@@ -63,3 +63,8 @@ msgstr "Tilbage til forsiden"
 
 msgid "Read More"
 msgstr "Læs Mere"
+
+msgid "Highlighted Cases"
+msgstr "Udvalgte Cases"
+
+
