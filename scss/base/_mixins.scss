@@ -19,3 +19,11 @@
         @warn 'Invalid breakpoint: #{$breakpoint}.';
     }
 }
+
+@mixin rotate($amount){
+    -webkit-transform: rotate($amount); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate($amount); /* IE 9 */
+    -moz-transform: rotate($amount); /* Mozilla */
+    -o-transform: rotate($amount); /* Opera */
+    transform:rotate($amount);
+}

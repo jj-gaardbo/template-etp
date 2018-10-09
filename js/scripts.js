@@ -14,16 +14,17 @@
         var trigger = $('.search-trigger');
         var input = $('.search-input-reveal');
 
-        trigger.on('click', function(){
+        trigger.on('click', function(e){
             if(!trigger.hasClass('revealed-form')){
+                e.preventDefault();
                 open_searchform(trigger, input);
                 setTimeout(function(){
                     close_searchform(trigger, input);
                 }, 10000);
+                return true;
             } else {
-                close_searchform(trigger, input);
+                return true;
             }
-            return false;
         });
     }
 

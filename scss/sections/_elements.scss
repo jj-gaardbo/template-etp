@@ -23,3 +23,8 @@
         color: $theme-logo-brown;
     }
 }
+
+.push{
+    height: $header-height+$top-navitation-height;
+    width: 100%;
+}

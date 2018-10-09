@@ -35,6 +35,7 @@
 }
 
 .fp-slide-content{
+    position: relative;
 
     &:before{
         z-index: -1;
@@ -47,24 +48,19 @@
         height: 500px;
         width: 500px;
         opacity: 1;
-        right: 0;
-        top: 10%;
+        top: -50%;
     }
 
     &.topleft, &.topright{
         margin-top: 25vh;
         &:before{
-            right: 0;
-            bottom: 20%;
-            transform: rotate(100deg);
+            @include rotate(-20deg);
         }
     }
 
     &.topright{
         &:before{
-            right: 0;
-            bottom: 20%;
-            transform: rotate(150deg);
+            @include rotate(320deg);
         }
     }
 
@@ -72,17 +68,13 @@
     &.bottomleft, &.bottomright{
         margin-top: 40vh;
         &:before{
-            left: 0;
-            top: 50%;
-            transform: rotate(-45deg);
+            transform: rotate(85deg);
         }
     }
 
     &.bottomright{
         &:before{
-            left: 0;
-            top: 50%;
-            transform: rotate(120deg);
+            transform: rotate(80deg);
         }
     }
 
