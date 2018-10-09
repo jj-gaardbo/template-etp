@@ -1,5 +1,25 @@
 			<!-- footer -->
-			<footer class="footer" role="contentinfo">
+			<footer class="footer row" role="contentinfo">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="footer-col col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <?php echo get_field('foot_col_1', 'option'); ?>
+                        </div>
+
+                        <div class="footer-col col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <?php echo get_field('foot_col_2', 'option'); ?>
+                        </div>
+
+                        <div class="footer-col col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <?php echo get_field('foot_col_3', 'option'); ?>
+                        </div>
+
+                    </div>
+
+                </div>
 
 			</footer>
 			<!-- /footer -->

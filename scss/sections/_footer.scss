@@ -1,0 +1,20 @@
+.footer{
+
+    min-height: $footer-height;
+    background-color: $theme-dark-blue;
+    color: $theme-white;
+
+    .footer-col{
+        padding-top: $footer-padding;
+        padding-bottom: $footer-padding;
+    }
+
+    a{
+        color: $theme-white;
+        &:hover{
+            color: $theme-logo-brown;
+        }
+
+    }
+
+}

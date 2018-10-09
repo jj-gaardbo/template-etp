@@ -12,6 +12,22 @@ body{
     font-family: $theme-font-text;
 }
 
+a{
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    -ms-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+h1{
+    font-size: 2em;
+    font-family: 'Source Serif Pro', serif;
+    margin-bottom: 1em;
+    line-height: 1.1em;
+}
+
 p{
     line-height: 1.2em;
+    margin-bottom: 1.1em;
 }

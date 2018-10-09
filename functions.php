@@ -321,3 +321,9 @@ function my_login_logo() { ?>
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page();
+
+}
