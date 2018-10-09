@@ -1,6 +1,42 @@
 .cases-section{
-
-    min-height: 500px;
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
     background-color: $theme-white;
+
+    .case-item{
+
+        h2{
+            min-height: 65px;
+            font-size: 1.7em;
+        }
+
+        .case-item-inner{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: $standard-padding;
+            background-color: $theme-light-bg-color;
+        }
+
+        .case-item-img{
+            width: 100%;
+            height: 200px;
+            display: block;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+
+        }
+
+        p{
+            display: block;
+            margin-bottom: 2em;
+        }
+
+        .case-item-link{
+            width: 100%;
+            text-align: center;
+        }
+    }
 
 }

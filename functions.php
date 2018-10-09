@@ -21,26 +21,6 @@ if (function_exists('add_theme_support'))
 \*------------------------------------*/
 function custom_nav()
 {
-	/*wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);*/
     wp_nav_menu( array(
         'theme_location'    => 'header-menu',
         'depth'             => 2,
@@ -102,9 +82,9 @@ function load_styles()
 function register_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
+        'header-menu' => __('Header Menu', 'etp-consult'), // Main Navigation
+        'sidebar-menu' => __('Sidebar Menu', 'etp-consult'), // Sidebar Navigation
+        'extra-menu' => __('Extra Menu', 'etp-consult') // Extra Navigation if needed (duplicate as many as you need!)
     ));
 }
 
@@ -172,7 +152,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
+    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'etp-consult') . '</a>';
 }
 
 // Remove 'text/css' from our enqueued stylesheet
@@ -237,36 +217,36 @@ function create_post_type_blank()
 {
     register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'html5-blank');
-    register_post_type('html5-blank', // Register Custom Post Type
+    register_post_type('cases', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
-            'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
+            'name' => __('Cases', 'etp-consult'), // Rename these to suit
+            'singular_name' => __('Cases', 'etp-consult'),
+            'add_new' => __('Add New', 'etp-consult'),
+            'add_new_item' => __('Add New Case', 'etp-consult'),
+            'edit' => __('Edit', 'etp-consult'),
+            'edit_item' => __('Edit Case', 'etp-consult'),
+            'new_item' => __('New Case', 'etp-consult'),
+            'view' => __('View Case', 'etp-consult'),
+            'view_item' => __('View Case', 'etp-consult'),
+            'search_items' => __('Search Cases', 'etp-consult'),
+            'not_found' => __('No Cases found', 'etp-consult'),
+            'not_found_in_trash' => __('No Cases found in Trash', 'etp-consult')
         ),
         'public' => true,
-        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'hierarchical' => true,
         'has_archive' => true,
         'supports' => array(
             'title',
             'editor',
             'excerpt',
             'thumbnail'
-        ), // Go to Dashboard Custom HTML5 Blank post for supports
-        'can_export' => true, // Allows export in Tools > Export
+        ),
+        'can_export' => true,
         'taxonomies' => array(
             'post_tag',
             'category'
-        ) // Add Category and Post Tags support
+        )
     ));
 }
 
@@ -326,4 +306,9 @@ if( function_exists('acf_add_options_page') ) {
 
     acf_add_options_page();
 
+}
+
+add_action( 'after_setup_theme', 'language_setup' );
+function language_setup(){
+    load_theme_textdomain( 'etp-consult', get_template_directory() . '/languages' );
 }

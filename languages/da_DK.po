@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-10-09 17:27+0200\n"
+"PO-Revision-Date: 2018-10-09 17:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: da\n"
+
+msgid "Header Menu"
+msgstr "Header Menu"
+
+msgid "Sidebar Menu"
+msgstr "Side Menu"
+
+msgid "Extra Menu"
+msgstr "Extra Menu"
+
+msgid "Cases"
+msgstr "Cases"
+
+msgid "Add New"
+msgstr "Tilføj ny"
+
+msgid "Add New Case"
+msgstr "Tilføj ny Case"
+
+msgid "Edit"
+msgstr "Rediger"
+
+msgid "Edit Case"
+msgstr "Rediger Case"
+
+msgid "New Case"
+msgstr "Ny Case"
+
+msgid "View Case"
+msgstr "Se Case"
+
+msgid "Search Cases"
+msgstr "Søg Cases"
+
+msgid "No Cases found"
+msgstr "Ingen Cases fundet"
+
+msgid "No Cases found in Trash"
+msgstr "Ingen Cases fundet i papirkurven"
+
+msgid "View Article"
+msgstr "Se artikel"
+
+msgid "Page not found"
+msgstr "Se artikel"
+
+msgid "Return home?"
+msgstr "Tilbage til forsiden"
+
+msgid "Read More"
+msgstr "Læs Mere"

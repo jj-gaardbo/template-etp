@@ -40,7 +40,7 @@ if( have_rows('fp_slider') ):?>
 
                                     <?php if(get_sub_field('fp_slider_link')):?>
 
-                                        <a class="btn-theme btn-theme-dark-blue" href="<?php the_sub_field('fp_slider_link') ?>">Læs mere</a>
+                                        <a class="btn-theme btn-theme-dark-blue" href="<?php the_sub_field('fp_slider_link') ?>"><?php _e('Read More','etp-consult');?></a>
 
                                     <?php endif; ?>
 
