@@ -299,6 +299,31 @@ function custom_menu_page_removing() {
 }
 add_action( 'admin_menu', 'custom_menu_page_removing' );
 
+function wpse_custom_menu_order( $menu_ord ) {
+    if ( !$menu_ord ) return true;
+
+    return array(
+        'index.php', // Dashboard
+        'separator1', // First separator
+        'edit.php', // Posts
+        'edit.php?post_type=page', // Pages
+        'edit.php?post_type=cases', // Cases
+        'separator2', // Second separator
+        'upload.php', // Media
+        'link-manager.php', // Links
+        'themes.php', // Appearance
+        'plugins.php', // Plugins
+        'users.php', // Users
+        'separator-last', // Last separator
+        'options-general.php', // Settings
+        'tools.php', // Tools
+    );
+}
+add_filter( 'custom_menu_order', 'wpse_custom_menu_order', 10, 1 );
+add_filter( 'menu_order', 'wpse_custom_menu_order', 10, 1 );
+
+//todo:add_filter('acf/settings/show_admin', '__return_false');
+
 /*------------------------------------*\
 	ShortCode Functions
 \*------------------------------------*/
