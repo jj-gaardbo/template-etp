@@ -1,15 +1,58 @@
-<section class="news-section row">
+<?php
+$args = array(
+    'post_type' => 'post',
+    'posts_per_page' => 4,
 
-    <div class="container">
+);
+$query = new WP_Query( $args );
+if ( $query->have_posts() ) : ?>
 
-        <div class="row">
+    <section class="news-section row">
 
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 news-item">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="<?php echo get_full_width_classes(); ?>">
+
+                    <h1><?php _e('Latest News', 'etp-consult');?></h1>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 news-item">
+
+                        <h2 class="post-item-title"><?php echo truncate_text($post->post_title, 50); ?></h2>
+
+                        <div class="post-item-excerpt">
+                            <?php if(has_excerpt($post->ID)) :?>
+
+                                <p><?php echo get_the_excerpt($post->ID);?></p>
+
+                            <?php else :?>
+
+                                <?php echo wpautop(wp_trim_words(get_the_content(), 15));?>
+
+                            <?php endif;?>
+                        </div>
+
+                        <a href="<?php echo get_permalink($post->ID); ?>" class="post-item-link btn-theme btn-theme-dark-blue">
+                            <?php _e('Read More', 'etp-consult');?>
+                        </a>
+
+                    </div>
+
+                <?php endwhile; ?>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+<?php wp_reset_postdata(); endif; ?>

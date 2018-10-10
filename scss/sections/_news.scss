@@ -1,0 +1,35 @@
+.news-section{
+
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    background-color: $theme-white;
+
+    .news-item{
+        margin-bottom: $section-padding;
+
+    }
+
+    .post-item-title{
+        display: block;
+        font-size: 1.2em;
+        height: 60px;
+
+        @media (max-width: 767px) {
+            height: auto;
+        }
+    }
+
+    .post-item-excerpt{
+        display: block;
+        height: 100px;
+        margin-bottom: $standard-padding;
+        @media (max-width: 767px) {
+            height: auto;
+        }
+    }
+
+    .post-item-link{
+
+    }
+
+}

@@ -106,5 +106,5 @@ msgstr "Opdater"
 msgid "Updated"
 msgstr "Opdateret"
 
-
-
+msgid "Latest News"
+msgstr "Aktuelt"
