@@ -70,5 +70,41 @@ msgstr "Udvalgte Cases"
 msgid "Close"
 msgstr "Luk"
 
+msgid "News"
+msgstr "Nyheder"
+
+msgid "Add News"
+msgstr "Tilføj nyhed"
+
+msgid "News Tags"
+msgstr "Nyheds tags"
+
+msgid "Edit News"
+msgstr "Rediger nyhed"
+
+msgid "New News"
+msgstr "Ny nyhed"
+
+msgid "View News"
+msgstr "Se nyhed"
+
+msgid "Search News"
+msgstr "Søg nyheder"
+
+msgid "No News found"
+msgstr "Ingen nyheder fundet"
+
+msgid "No News found in Trash"
+msgstr "Ingen nyheder fundet i papirkurven"
+
+msgid "All News"
+msgstr "Alle nyheder"
+
+msgid "Update"
+msgstr "Opdater"
+
+msgid "Updated"
+msgstr "Opdateret"
+
 
 

@@ -78,6 +78,12 @@ function load_styles()
     wp_enqueue_style('maincss'); // Enqueue it!
 }
 
+function load_admin_styles(){
+    wp_register_style( 'etp_admin_css', get_template_directory_uri() . '/css/etp-admin.css', false, '1.0.0' );
+    wp_enqueue_style('etp_admin_css'); // Enqueue it!
+}
+
+
 // Register Navigation
 function register_menu()
 {
@@ -175,8 +181,9 @@ function remove_thumbnail_dimensions( $html )
 // Add Actions
 add_action('init', 'header_scripts');
 add_action('wp_enqueue_scripts', 'load_styles');
+add_action( 'admin_enqueue_scripts', 'load_admin_styles' );
 add_action('init', 'register_menu');
-add_action('init', 'create_post_type_blank');
+add_action('init', 'create_post_type_cases');
 add_action('init', 'pagination');
 
 // Remove Actions
@@ -213,7 +220,7 @@ add_shortcode('custom_short_code', 'custom_short_code');
 /*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
-function create_post_type_blank()
+function create_post_type_cases()
 {
     register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
     register_taxonomy_for_object_type('post_tag', 'html5-blank');
@@ -242,6 +249,7 @@ function create_post_type_blank()
             'excerpt',
             'thumbnail'
         ),
+        'menu_icon'  => 'dashicons-cart',
         'can_export' => true,
         'taxonomies' => array(
             'post_tag',
@@ -249,6 +257,47 @@ function create_post_type_blank()
         )
     ));
 }
+
+
+function change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = __('News', 'etp-consult');
+    $submenu['edit.php'][5][0] = __('News', 'etp-consult');
+    $submenu['edit.php'][10][0] = __('Add News', 'etp-consult');
+    $submenu['edit.php'][16][0] = __('News Tags', 'etp-consult');
+}
+function change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = __('News', 'etp-consult');
+    $labels->singular_name = __('News', 'etp-consult');
+    $labels->add_new = __('Add News', 'etp-consult');
+    $labels->add_new_item = __('Add News', 'etp-consult');
+    $labels->edit_item = __('Edit News', 'etp-consult');
+    $labels->new_item = __('News item', 'etp-consult');
+    $labels->view_item = __('View News', 'etp-consult');
+    $labels->search_items = __('Search News', 'etp-consult');
+    $labels->not_found = __('No News found', 'etp-consult');
+    $labels->not_found_in_trash = __('No News found in Trash', 'etp-consult');
+    $labels->all_items = __('All News', 'etp-consult');
+    $labels->menu_name = __('News', 'etp-consult');
+    $labels->name_admin_bar = __('News', 'etp-consult');
+}
+
+add_action( 'admin_menu', 'change_post_label' );
+add_action( 'init', 'change_post_object' );
+
+add_filter( 'comments_open', '__return_false', 10, 2 );
+
+
+/*------------------------------------*\
+	Admin menu customization
+\*------------------------------------*/
+function custom_menu_page_removing() {
+    remove_menu_page( 'edit-comments.php' );
+}
+add_action( 'admin_menu', 'custom_menu_page_removing' );
 
 /*------------------------------------*\
 	ShortCode Functions
@@ -304,8 +353,14 @@ add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 if( function_exists('acf_add_options_page') ) {
 
-    acf_add_options_page();
+    $args = array(
+        'page_title' => 'Standard indhold',
+        'menu_title' => 'Standard indhold',
+        'update_button'		=> __('Update', 'etp-consult'),
+        'updated_message'	=> __("Updated", 'etp-consult'),
 
+    );
+    acf_add_options_page($args);
 }
 
 add_action( 'after_setup_theme', 'language_setup' );

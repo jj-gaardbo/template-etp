@@ -1,0 +1,21 @@
+@mixin iconChange($post-slug, $icon){
+
+    @if $post-slug == 'posts' {
+        #adminmenu #menu-posts div.wp-menu-image{
+            &:before {
+                content: $icon!important;
+            }
+        }
+    }
+    @else {
+        #adminmenu #menu-posts-#{$post-slug} div.wp-menu-image{
+            &:before {
+                content: $icon!important;
+            }
+        }
+    }
+
+
+}
+
+@include iconChange('cases', '\f322');
