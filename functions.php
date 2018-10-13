@@ -193,6 +193,8 @@ add_action('wp_enqueue_scripts', 'load_styles');
 add_action( 'admin_enqueue_scripts', 'load_admin_styles' );
 add_action('init', 'register_menu');
 add_action('init', 'create_post_type_cases');
+add_action('init', 'create_post_type_references');
+add_action('init', 'create_post_type_expertises');
 add_action('init', 'pagination');
 
 // Remove Actions
@@ -258,7 +260,6 @@ function create_post_type_cases()
             'excerpt',
             'thumbnail'
         ),
-        'menu_icon'  => 'dashicons-cart',
         'can_export' => true,
         'taxonomies' => array(
             'post_tag',
@@ -267,6 +268,79 @@ function create_post_type_cases()
     ));
 }
 
+function create_post_type_references()
+{
+    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'html5-blank');
+    register_post_type('references', // Register Custom Post Type
+        array(
+            'labels' => array(
+                'name' => __('References', 'etp-consult'), // Rename these to suit
+                'singular_name' => __('References', 'etp-consult'),
+                'add_new' => __('Add New', 'etp-consult'),
+                'add_new_item' => __('Add New Reference', 'etp-consult'),
+                'edit' => __('Edit', 'etp-consult'),
+                'edit_item' => __('Edit Reference', 'etp-consult'),
+                'new_item' => __('New Reference', 'etp-consult'),
+                'view' => __('View Reference', 'etp-consult'),
+                'view_item' => __('View Reference', 'etp-consult'),
+                'search_items' => __('Search References', 'etp-consult'),
+                'not_found' => __('No References found', 'etp-consult'),
+                'not_found_in_trash' => __('No References found in Trash', 'etp-consult')
+            ),
+            'public' => true,
+            'hierarchical' => true,
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail'
+            ),
+            'can_export' => true,
+            'taxonomies' => array(
+                'post_tag',
+                'category'
+            )
+        ));
+}
+
+function create_post_type_expertises()
+{
+    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'html5-blank');
+    register_post_type('expertises', // Register Custom Post Type
+        array(
+            'labels' => array(
+                'name' => __('Expertises', 'etp-consult'), // Rename these to suit
+                'singular_name' => __('Expertises', 'etp-consult'),
+                'add_new' => __('Add New', 'etp-consult'),
+                'add_new_item' => __('Add New Expertise', 'etp-consult'),
+                'edit' => __('Edit', 'etp-consult'),
+                'edit_item' => __('Edit Expertise', 'etp-consult'),
+                'new_item' => __('New Expertise', 'etp-consult'),
+                'view' => __('View Expertise', 'etp-consult'),
+                'view_item' => __('View Expertise', 'etp-consult'),
+                'search_items' => __('Search Expertises', 'etp-consult'),
+                'not_found' => __('No Expertises found', 'etp-consult'),
+                'not_found_in_trash' => __('No Expertises found in Trash', 'etp-consult')
+            ),
+            'public' => true,
+            'hierarchical' => true,
+            'has_archive' => false,
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail'
+            ),
+            'can_export' => true,
+            'taxonomies' => array(
+                'post_tag',
+                'category'
+            )
+        ));
+}
 
 function change_post_label() {
     global $menu;
@@ -316,6 +390,8 @@ function wpse_custom_menu_order( $menu_ord ) {
         'edit.php', // Posts
         'edit.php?post_type=page', // Pages
         'edit.php?post_type=cases', // Cases
+        'edit.php?post_type=references', // References
+        'edit.php?post_type=expertises', // Expertises
         'separator2', // Second separator
         'upload.php', // Media
         'link-manager.php', // Links

@@ -37,14 +37,20 @@ function truncate_text($text, $length){
 function get_current_page_post_type($pageID, $child = false){
     $pagePost = get_field('pt_post','options');
     $pageCase = get_field('pt_cases','options');
+    $pageReferences = get_field('pt_references','options');
+    $pageExpertises = get_field('pt_expertises','options');
 
     if($pageID == $pagePost){
         return 'post';
     }
-
     else if($pageID == $pageCase){
         return 'cases';
-
+    }
+    else if($pageID == $pageReferences){
+        return 'references';
+    }
+    else if($pageID == $pageExpertises){
+        return 'expertises';
     }
 
     if($child){

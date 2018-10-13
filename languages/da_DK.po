@@ -108,3 +108,57 @@ msgstr "Opdateret"
 
 msgid "Latest News"
 msgstr "Aktuelt"
+
+msgid "References"
+msgstr "Referencer"
+
+msgid "Reference"
+msgstr "Reference"
+
+msgid "Add New Reference"
+msgstr "Tilføj ny Reference"
+
+msgid "Edit Reference"
+msgstr "Rediger Reference"
+
+msgid "New Reference"
+msgstr "Ny Reference"
+
+msgid "View Reference"
+msgstr "Se Reference"
+
+msgid "Search References"
+msgstr "Søg Referencer"
+
+msgid "No References found"
+msgstr "Ingen Referencer fundet"
+
+msgid "No References found in Trash"
+msgstr "Ingen Referencer fundet i papirkurven"
+
+msgid "Expertises"
+msgstr "Ekspertiser"
+
+msgid "Expertise"
+msgstr "Ekspertise"
+
+msgid "Add New Expertise"
+msgstr "Tilføj ny Ekspertise"
+
+msgid "Edit Expertise"
+msgstr "Rediger Ekspertise"
+
+msgid "New Expertise"
+msgstr "Ny Ekspertise"
+
+msgid "View Expertise"
+msgstr "Se Ekspertise"
+
+msgid "Search Expertises"
+msgstr "Søg Ekspertiser"
+
+msgid "No Expertises found"
+msgstr "Ingen Ekspertiser fundet"
+
+msgid "No Expertises found in Trash"
+msgstr "Ingen Ekspertiser fundet i papirkurven"

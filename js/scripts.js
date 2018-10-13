@@ -17,16 +17,13 @@
 	});
 
     function init_active_nav(){
-
         var menuItems = $('.menu li');
         var body = $('body').data('page-post-type');
-        console.log(body);
         $.each(menuItems, function(){
             if($(this).hasClass(body)){
                 $(this).addClass('current-menu-item');
             }
         });
-
     }
 
     function init_scrollto_button(){
