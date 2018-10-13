@@ -75,7 +75,7 @@
             'padding-right' :   '20px',
             'padding-left'  :   '20px'
         });
-        input.focus();
+        input.find('input').focus();
         trigger.attr('type','submit');
         trigger.addClass('revealed-form');
     }
