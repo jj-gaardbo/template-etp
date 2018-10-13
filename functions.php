@@ -481,10 +481,7 @@ function language_setup(){
 add_filter( 'get_archives_link', function( $link_html, $url, $text, $format, $before, $after ) {
 
     if ( 'accordion' == $format ) {
-        $link_html = "\t<li value=\"". esc_attr( $text ) ."\" data-filter-value=\".classof". esc_attr( $text ) ."\">$before<a href='$url'>$text</a>$after</li>\n";
-
         $link_html = get_accordion_DOM_news($link_html, $url, $text, $format, $before, $after);
-
     }
 
     return $link_html;

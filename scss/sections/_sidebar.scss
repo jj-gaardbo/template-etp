@@ -72,6 +72,10 @@ aside.sidebar{
                 &:hover{
                     color: $theme-logo-brown;
                 }
+
+                &.active-list-item{
+                    color: $theme-logo-orange;
+                }
             }
         }
     }
