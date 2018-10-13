@@ -4,9 +4,19 @@
     background-color: $theme-dark-blue;
     color: $theme-white;
 
+    @include respond-below(md){
+        min-height: auto;
+        height: auto;
+    }
+
     .footer-col{
         padding-top: $footer-padding;
         padding-bottom: $footer-padding;
+
+        @include respond-below(md){
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
     }
 
     a{
