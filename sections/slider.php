@@ -71,6 +71,8 @@ if( have_rows('fp_slider') ):?>
 
     </ul>
 
+    <span class="arrow-down"><i class="fas fa-caret-down"></i></span>
+
 </section>
 
 <?php endif; ?>

@@ -8,9 +8,21 @@
 
         init_slider();
 
+        init_scrollto_button();
+
         init_video_lightbox();
 		
 	});
+
+    function init_scrollto_button(){
+
+        $(".arrow-down").click(function() {
+            $('html, body').animate({
+                scrollTop: $(".testimonial-section").offset().top - 90
+            }, 1000);
+        });
+
+    }
 
     function init_video_lightbox(){
         $(".modal-trigger").click(function(e){
