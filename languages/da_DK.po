@@ -162,3 +162,6 @@ msgstr "Ingen Ekspertiser fundet"
 
 msgid "No Expertises found in Trash"
 msgstr "Ingen Ekspertiser fundet i papirkurven"
+
+msgid "Sorry, nothing to display."
+msgstr "Der er intet indhold at vise"

@@ -5,6 +5,7 @@
 
     <?php
     $post_type = get_current_page_post_type(get_the_ID());
+
     wp_reset_postdata();
 
     $cpt_posts = new WP_Query(array(
