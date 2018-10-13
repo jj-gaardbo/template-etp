@@ -34,21 +34,23 @@ function truncate_text($text, $length){
     return $text;
 }
 
-function get_current_page_post_type($pageID){
+function get_current_page_post_type($pageID, $child = false){
     $pagePost = get_field('pt_post','options');
-    $pageCase = get_field('pt_case','options');
+    $pageCase = get_field('pt_cases','options');
 
     if($pageID == $pagePost){
         return 'post';
     }
 
     else if($pageID == $pageCase){
-
-        return "cases";
+        return 'cases';
 
     }
 
-    return "";
+    if($child){
+        return '';
+    }
+    return get_post_type();
 }
 
 function clean_string($string){

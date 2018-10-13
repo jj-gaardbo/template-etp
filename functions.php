@@ -34,6 +34,15 @@ function custom_nav()
     ) );
 }
 
+add_filter( 'nav_menu_css_class', 'menu_item_classes', 10, 4 );
+
+function menu_item_classes( $classes, $item, $args, $depth ) {
+
+    $classes[] = get_current_page_post_type(url_to_postid($item->url), true);
+
+    return $classes;
+}
+
 function header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
@@ -242,7 +251,7 @@ function create_post_type_cases()
         ),
         'public' => true,
         'hierarchical' => true,
-        'has_archive' => true,
+        'has_archive' => false,
         'supports' => array(
             'title',
             'editor',

@@ -1,10 +1,16 @@
 <?php get_header();
 $post_type = get_current_page_post_type(get_the_ID());
 
-$posts = new WP_Query(array(
+$args = array(
     'post_type' => $post_type,
-    'posts_per_page' => 1
-));
+    'posts_per_page' => 1,
+);
+
+if(is_singular($post_type)){
+    $args['p'] = get_the_ID();
+}
+
+$posts = new WP_Query($args);
 ?>
 
 <section class="page-content row">
@@ -72,10 +78,7 @@ $posts = new WP_Query(array(
             </div>
 
             <?php
-
-            wp_reset_postdata();
-
-            if($post_type == 'post'){
+            if($post_type == 'post' || is_singular('post')){
                 get_sidebar( 'news' );
             } else {
                 get_sidebar();

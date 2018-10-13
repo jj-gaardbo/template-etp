@@ -22,8 +22,8 @@
         </script>
 
 	</head>
-	<body <?php body_class(); ?>>
 
+	<body <?php body_class(); ?> data-page-post-type="<?php echo get_current_page_post_type(get_the_ID())?>">
 
     <!-- wrapper -->
     <div class="container-fluid">

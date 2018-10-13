@@ -5,21 +5,26 @@
 
     <?php
     $post_type = get_current_page_post_type(get_the_ID());
+    wp_reset_postdata();
 
-        $args = array(
-            'type'            => 'yearly',
-            'limit'           => '',
-            'format'          => 'html',
-            'before'          => '',
-            'after'           => '',
-            'show_post_count' => false,
-            'echo'            => 1,
-            'order'           => 'DESC',
-            'post_type'       => 'post'
-        );
+    $cpt_posts = new WP_Query(array(
+        'post_type' => $post_type,
+        'posts_per_page' => -1
+    ));
 
-        return wp_get_archives( $args );
-    ?>
+    if ( $cpt_posts->have_posts() ) : ?>
+        <?php while ( $cpt_posts->have_posts() ) : $cpt_posts->the_post(); ?>
+
+            <li>
+                <a href="<?php the_permalink(); ?>">
+                    <?php the_title();?>
+                </a>
+            </li>
+
+        <?php endwhile; ?>
+    <?php endif; ?>
+
+
     </ul>
 
 </aside>

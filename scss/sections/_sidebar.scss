@@ -3,10 +3,16 @@ aside.sidebar{
     padding: $standard-padding 0;
 
     .sidebar-list{
-
-        li{
+        padding-top: $standard-padding;
+        padding-bottom: $standard-padding;
+        &>li{
+            padding: 10px 0;
 
             a{
+                line-height: 1.1em;
+                display: block;
+                width: 100%;
+                padding: 0 $standard-padding 10px;
                 @include color_transition;
                 color: $theme-dark-blue;
 
@@ -14,17 +20,25 @@ aside.sidebar{
                     color: $theme-logo-brown;
                 }
             }
+
+
+            &:first-child{
+                padding-top: 0;
+            }
         }
     }
 
 
     &.sidebar-news{
-        padding-top: $standard-padding;
-        padding-bottom: $standard-padding;
+
         li{
+            padding: 10px 0;
+
             button{
+                border: none;
+                line-height: 1.1em;
                 color: $theme-dark-blue;
-                padding: 10px 0;
+                padding: 0 0 10px;
                 text-align: left;
                 width: 100%;
                 background: none;
@@ -32,6 +46,10 @@ aside.sidebar{
 
                 &:hover{
                     color: $theme-logo-brown;
+                }
+
+                &:first-child{
+                    padding-top: 0;
                 }
             }
         }
@@ -46,7 +64,7 @@ aside.sidebar{
         background-color: $theme-white;
 
         li{
-            padding: 10px $standard-padding;
+            padding: 15px 0;
             a{
                 @include color_transition();
                 color: $theme-font-color;
