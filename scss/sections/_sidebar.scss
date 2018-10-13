@@ -1,0 +1,60 @@
+aside.sidebar{
+    background-color: $theme-dark-bg-color;
+    padding: $standard-padding 0;
+
+    .sidebar-list{
+
+        li{
+
+            a{
+                @include color_transition;
+                color: $theme-dark-blue;
+
+                &:hover{
+                    color: $theme-logo-brown;
+                }
+            }
+        }
+    }
+
+
+    &.sidebar-news{
+        padding-top: $standard-padding;
+        padding-bottom: $standard-padding;
+        li{
+            button{
+                color: $theme-dark-blue;
+                padding: 10px 0;
+                text-align: left;
+                width: 100%;
+                background: none;
+                @include color_transition();
+
+                &:hover{
+                    color: $theme-logo-brown;
+                }
+            }
+        }
+
+        li>.accordion-head{
+            padding:0 $standard-padding;
+        }
+    }
+
+    &.sidebar-news li ul{
+
+        background-color: $theme-white;
+
+        li{
+            padding: 10px $standard-padding;
+            a{
+                @include color_transition();
+                color: $theme-font-color;
+
+                &:hover{
+                    color: $theme-logo-brown;
+                }
+            }
+        }
+    }
+}

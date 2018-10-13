@@ -290,7 +290,6 @@ add_action( 'init', 'change_post_object' );
 
 add_filter( 'comments_open', '__return_false', 10, 2 );
 
-
 /*------------------------------------*\
 	Admin menu customization
 \*------------------------------------*/
@@ -361,6 +360,7 @@ function custom_vars() {
 add_action ('wp_enqueue_scripts', 'custom_vars');
 
 require_once get_template_directory() . '/includes/common.php';
+require_once get_template_directory() . '/includes/markup.php';
 
 function my_login_logo() { ?>
     <style type="text/css">
@@ -392,3 +392,16 @@ add_action( 'after_setup_theme', 'language_setup' );
 function language_setup(){
     load_theme_textdomain( 'etp-consult', get_template_directory() . '/languages' );
 }
+
+add_filter( 'get_archives_link', function( $link_html, $url, $text, $format, $before, $after ) {
+
+    if ( 'accordion' == $format ) {
+        $link_html = "\t<li value=\"". esc_attr( $text ) ."\" data-filter-value=\".classof". esc_attr( $text ) ."\">$before<a href='$url'>$text</a>$after</li>\n";
+
+        $link_html = get_accordion_DOM_news($link_html, $url, $text, $format, $before, $after);
+
+    }
+
+    return $link_html;
+
+}, 10, 6 );

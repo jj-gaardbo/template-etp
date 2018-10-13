@@ -33,3 +33,27 @@ function truncate_text($text, $length){
     }
     return $text;
 }
+
+function get_current_page_post_type($pageID){
+    $pagePost = get_field('pt_post','options');
+    $pageCase = get_field('pt_case','options');
+
+    if($pageID == $pagePost){
+        return 'post';
+    }
+
+    else if($pageID == $pageCase){
+
+        return "cases";
+
+    }
+
+    return "";
+}
+
+function clean_string($string){
+    $string = sanitize_text_field($string);
+    $string = urlencode($string);
+    return $string;
+
+}
