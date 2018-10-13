@@ -1,10 +1,17 @@
 <?php get_header();
 $post_type = get_current_page_post_type(get_the_ID());
 
-$posts = new WP_Query(array(
-    'post_type' => $post_type,
-    'posts_per_page' => 1
-));
+// Hack in order to display the posts correctly
+$post_array = array();
+if($post->post_content === ''){
+    $posts = new WP_Query(array(
+        'post_type' => $post_type,
+        'posts_per_page' => 1
+    ));
+    $post_array = array($posts->posts[0]);
+} else {
+    $post_array = $posts;
+}
 ?>
 
 <section class="page-content row">
@@ -17,31 +24,37 @@ $posts = new WP_Query(array(
 
             <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 page-content-inner">
 
-                <?php if ($posts->have_posts()): while ($posts->have_posts()) : $posts->the_post(); ?>
+                <?php if (!empty($post_array)): ?>
+
+                    <?php foreach($post_array as $post) : ?>
 
                     <!-- article -->
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <article id="post-<?php $post->ID; ?>">
 
                         <!-- post thumbnail -->
-                        <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-                            <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+                        <?php if ( has_post_thumbnail($post)) : // Check if Thumbnail exists ?>
+                            <?php get_the_post_thumbnail($post); // Fullsize image for the single post ?>
                         <?php endif; ?>
                         <!-- /post thumbnail -->
 
                         <!-- post title -->
                         <h1>
-                            <?php the_title(); ?>
+                            <?php echo get_the_title($post); ?>
                         </h1>
                         <!-- /post title -->
 
-                        <?php the_content(); // Dynamic Content ?>
+                        <?php
+                        $content = $post->post_content;
+                        $content = apply_filters('the_content', $content);
+                        $content = str_replace(']]>', ']]&gt;', $content);
+                        echo $content; ?>
 
                         <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
                     </article>
                     <!-- /article -->
 
-                <?php endwhile; ?>
+                <?php endforeach; ?>
 
                 <?php else: ?>
 
