@@ -165,3 +165,30 @@ msgstr "Ingen Ekspertiser fundet i papirkurven"
 
 msgid "Sorry, nothing to display."
 msgstr "Der er intet indhold at vise"
+
+msgid "Employees"
+msgstr "Medarbejdere"
+
+msgid "Employee"
+msgstr "Medarbejder"
+
+msgid "Add New Employee"
+msgstr "Tilføj ny Medarbejder"
+
+msgid "Edit Employee"
+msgstr "Rediger Medarbejder"
+
+msgid "New Employee"
+msgstr "Ny Medarbejder"
+
+msgid "View Employee"
+msgstr "Se Medarbejder"
+
+msgid "Search Employees"
+msgstr "Søg Medarbejdere"
+
+msgid "No Employees found"
+msgstr "Ingen Medarbejdere fundet"
+
+msgid "No Employees found in Trash"
+msgstr "Ingen Medarbejdere fundet i papirkurven"
