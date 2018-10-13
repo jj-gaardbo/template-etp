@@ -1,7 +1,7 @@
 <?php
 $args = array(
     'post_type' => 'post',
-    'posts_per_page' => 4,
+    'posts_per_page' => 5,
 
 );
 $query = new WP_Query( $args );
@@ -23,11 +23,11 @@ if ( $query->have_posts() ) : ?>
 
             <div class="row">
 
-                <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                <?php if ($query->have_posts()) : $query->the_post(); // first post?>
 
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 news-item">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 news-item news-item-first clear">
 
-                        <h2 class="post-item-title"><?php echo truncate_text($post->post_title, 50); ?></h2>
+                        <h2 class="post-item-title"><?php echo $post->post_title; ?></h2>
 
                         <div class="post-item-excerpt">
                             <?php if(has_excerpt($post->ID)) :?>
@@ -36,7 +36,7 @@ if ( $query->have_posts() ) : ?>
 
                             <?php else :?>
 
-                                <?php echo wpautop(wp_trim_words(get_the_content(), 15));?>
+                                <?php echo wpautop(wp_trim_words(get_the_content(), 30));?>
 
                             <?php endif;?>
                         </div>
@@ -47,7 +47,27 @@ if ( $query->have_posts() ) : ?>
 
                     </div>
 
-                <?php endwhile; ?>
+                <?php endif; ?>
+
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 news-item news-item-list">
+
+                    <ul>
+
+                        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+
+                            <li>
+
+                                <a href="<?php echo get_permalink($post->ID); ?>" class="post-item-link">
+                                    <h2 class="post-item-title"><?php echo truncate_text($post->post_title, 50); ?></h2>
+                                </a>
+
+                            </li>
+
+                        <?php endwhile; ?>
+
+                    </ul>
+
+                </div>
 
             </div>
 

@@ -5,7 +5,7 @@
     width: 201px;
 
 
-    @media (max-width: 767px) {
+    @include respond-below(md) {
         width: 140px;
     }
 }

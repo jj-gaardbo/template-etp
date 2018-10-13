@@ -5,7 +5,7 @@
 
     .testimonial{
         border-right: $standard-border-width solid $theme-font-color;
-        @media (max-width: 767px) {
+        @include respond-below(lg) {
             border-right: 0px;
         }
 
@@ -14,7 +14,7 @@
             font-size: 2em;
             @include boxsize();
             text-align: right;
-            @media (max-width: 767px) {
+            @include respond-below(lg) {
                 text-align: left;
                 font-size: 1.3em;
             }
@@ -47,7 +47,7 @@
             margin: 0 auto;
             @include color_transition();
 
-            @media (max-width: 767px) {
+            @include respond-below(lg) {
                 margin-top: $standard-padding;
                 position: relative;
             }
