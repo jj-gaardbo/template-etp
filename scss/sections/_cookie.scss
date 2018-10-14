@@ -1,0 +1,19 @@
+.cookie-box{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $theme-logo-orange;
+    z-index: 120;
+    @include boxsize();
+    padding: $standard-padding;
+
+    .cookie-box-content{
+        color: $theme-white;
+    }
+
+    .cookie-box-button{
+        text-align: right;
+    }
+
+}

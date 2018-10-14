@@ -24,7 +24,9 @@
 			</footer>
 			<!-- /footer -->
 
-		</div>
+            <?php require_once get_template_directory() . '/sections/cookie.php';?>
+
+        </div>
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
@@ -39,5 +41,5 @@
 		ga('send', 'pageview');
 		</script>
 
-	</body>
+    </body>
 </html>
