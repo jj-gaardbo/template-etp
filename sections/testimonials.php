@@ -34,7 +34,7 @@ if(trim($testimonial) == '' && $videoLink != ''){return;}
         <div class="modal-sandbox"></div>
         <div class="modal-box">
             <div class="modal-header">
-                <span>ETP Consult - Præsentation</span>
+                <span><?php _e('ETP Consult - Presentation', 'etp-consult'); ?></span>
                 <i class="fas fa-times close-modal"></i>
             </div>
             <div class="modal-body">

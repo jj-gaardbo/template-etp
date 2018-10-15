@@ -35,10 +35,10 @@ function truncate_text($text, $length){
 }
 
 function get_current_page_post_type($pageID, $child = false){
-    $pagePost = get_field('pt_post','options');
-    $pageCase = get_field('pt_cases','options');
-    $pageReferences = get_field('pt_references','options');
-    $pageExpertises = get_field('pt_expertises','options');
+    $pagePost = get_field('pt_post_'.pll_current_language( 'slug' ),'options');
+    $pageCase = get_field('pt_cases_'.pll_current_language( 'slug' ),'options');
+    $pageReferences = get_field('pt_references_'.pll_current_language( 'slug' ),'options');
+    $pageExpertises = get_field('pt_expertises_'.pll_current_language( 'slug' ),'options');
 
     if($pageID == $pagePost){
         return 'post';

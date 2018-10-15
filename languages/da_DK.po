@@ -192,3 +192,9 @@ msgstr "Ingen Medarbejdere fundet"
 
 msgid "No Employees found in Trash"
 msgstr "Ingen Medarbejdere fundet i papirkurven"
+
+msgid "ETP Consult - Presentation"
+msgstr "ETP Consult - Præsentation"
+
+msgid "Search"
+msgstr "Søg"

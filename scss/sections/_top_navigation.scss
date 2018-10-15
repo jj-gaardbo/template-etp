@@ -19,6 +19,21 @@
         color: $theme-white;
     }
 
+    ul.language-switcher{
+        margin: 9px $standard-padding 9px;
+        border-left: $standard-border-width solid $theme-white;
+        float: right;
+        line-height: 33px;
+
+        li{
+            margin-left: $standard-padding;
+
+            a{
+                text-transform: uppercase;
+            }
+        }
+    }
+
     .searchform-wrapper{
         justify-content: flex-end;
 
