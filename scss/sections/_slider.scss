@@ -114,7 +114,7 @@
     }
 
     margin-top: 25vh;
-    background-color: $theme-logo-orange;
+    background-color: $theme-dark-bg-color;
     padding:$standard-padding;
 
     h1,p,a{
@@ -126,7 +126,7 @@
         font-family: $theme-font-heading;
         font-size: 3em;
         margin-bottom: $standard-padding;
-        color: $theme-white;
+        color: $theme-font-color;
 
         @include respond-below(md) {
             font-size: 1.3em;
@@ -136,7 +136,7 @@
     p{
         margin-bottom: $standard-padding;
         font-size: 1.1em;
-        color: $theme-white;
+        color: $theme-font-color;
 
         @include respond-below(md) {
             font-size: 0.9em;
