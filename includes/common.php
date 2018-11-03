@@ -65,3 +65,42 @@ function clean_string($string){
     return $string;
 
 }
+
+function get_the_page_children($postID){
+    $args = array(
+        'post_parent' => $postID,
+    );
+    $children = get_children( $args );
+
+    if ( ! empty($children) ) {
+        $childArray = array();
+        foreach($children as $child){
+            $childArray[] = $child;
+        }
+        return $childArray;
+    } else {
+        return false;
+    }
+}
+
+function has_children($postID) {
+    $children = get_pages( array( 'child_of' => $postID ) );
+    if( count( $children ) == 0 ) {
+        return false;
+    } else {
+        return $children;
+    }
+}
+
+function has_parent() {
+    global $post;
+    if($post->post_parent === 0){
+        return false;
+    }
+    $children = get_pages( array( 'child_of' => $post->post_parent ) );
+    if( count( $children ) == 0 ) {
+        return false;
+    } else {
+        return $children;
+    }
+}

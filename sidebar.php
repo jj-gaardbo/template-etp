@@ -1,32 +1,26 @@
+<?php
+$children = count(has_children(get_the_ID())) > 0 ? has_children(get_the_ID()) : has_parent();
+
+if ( $children !== false && is_array($children) && count($children) > 0 ) : ?>
+
 <!-- sidebar -->
 <aside class="sidebar col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3" role="complementary">
 
     <ul class="sidebar-list">
 
-    <?php
-    $post_type = get_current_page_post_type(get_the_ID());
-
-    wp_reset_postdata();
-
-    $cpt_posts = new WP_Query(array(
-        'post_type' => $post_type,
-        'posts_per_page' => -1
-    ));
-
-    if ( $cpt_posts->have_posts() ) : ?>
-        <?php while ( $cpt_posts->have_posts() ) : $cpt_posts->the_post(); ?>
+        <?php foreach ($children as $child) : ?>
 
             <li>
-                <a href="<?php the_permalink(); ?>">
-                    <?php the_title();?>
+                <a href="<?php echo get_permalink($child); ?>">
+                    <?php echo get_the_title($child);?>
                 </a>
             </li>
 
-        <?php endwhile; ?>
-    <?php endif; ?>
-
+        <?php endforeach; ?>
 
     </ul>
 
 </aside>
 <!-- /sidebar -->
+
+<?php endif; ?>
