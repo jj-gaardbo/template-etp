@@ -1,6 +1,5 @@
 <?php
-$children = count(has_children(get_the_ID())) > 0 ? has_children(get_the_ID()) : has_parent();
-
+$children = has_children(get_the_ID()) ? has_children(get_the_ID()) : has_parent();
 if ( $children !== false && is_array($children) && count($children) > 0 ) : ?>
 
 <!-- sidebar -->

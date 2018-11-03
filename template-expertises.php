@@ -1,26 +1,17 @@
-<?php /* Template Name: Expertises Page */ get_header(); ?>
-
-<?php get_header();
-$post_type = 'expertises';
-$children = has_children(get_the_ID());
-
-// Hack in order to display the posts correctly
-$post_array = array();
+<?php /* Template Name: Expertises Page */
+get_header();
+global $wp_query;
+$original_query = $wp_query;
 if($post->post_content === ''){
-    $posts = new WP_Query(array(
-        'post_type' => $post_type,
+    $wp_query = null;
+    $wp_query = new WP_Query( array(
+        'post_type' => 'expertises',
         'posts_per_page' => 1
-    ));
-    if($posts->post_count != 0){
-        $post_array = array($posts->posts[0]);
-    }
-} else {
-    $post_array = $posts;
+    ) );
 }
 ?>
 
 <section class="page-content row">
-
     <div class="push"></div>
 
     <div class="container">
@@ -29,37 +20,13 @@ if($post->post_content === ''){
 
             <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 page-content-inner">
 
-                <?php if (is_array($post_array) && !empty($post_array) && !is_null($post_array[0])):?>
+                <?php if ( have_posts() ) : ?>
 
-                    <?php foreach($post_array as $post) : ?>
+                    <?php while ( have_posts() ) : the_post();?>
 
-                        <!-- article -->
-                        <article id="post-<?php $post->ID; ?>">
+                        <?php echo get_content_DOM($post); ?>
 
-                            <!-- post thumbnail -->
-                            <?php if ( has_post_thumbnail($post)) : // Check if Thumbnail exists ?>
-                                <?php get_the_post_thumbnail($post); // Fullsize image for the single post ?>
-                            <?php endif; ?>
-                            <!-- /post thumbnail -->
-
-                            <!-- post title -->
-                            <h1>
-                                <?php echo get_the_title($post); ?>
-                            </h1>
-                            <!-- /post title -->
-
-                            <?php
-                            $content = $post->post_content;
-                            $content = apply_filters('the_content', $content);
-                            $content = str_replace(']]>', ']]&gt;', $content);
-                            echo $content; ?>
-
-                            <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
-
-                        </article>
-                        <!-- /article -->
-
-                    <?php endforeach; ?>
+                    <?php endwhile; ?>
 
                 <?php else: ?>
 
@@ -75,10 +42,7 @@ if($post->post_content === ''){
 
             </div>
 
-            <?php
-            wp_reset_postdata();
-            get_sidebar('alternative');
-            ?>
+            <?php get_sidebar('alternative'); ?>
 
         </div>
 
@@ -86,4 +50,9 @@ if($post->post_content === ''){
 
 </section>
 
-<?php get_footer(); ?>
+<?php
+$wp_query = null;
+$wp_query = $original_query;
+wp_reset_postdata();
+get_footer();
+?>

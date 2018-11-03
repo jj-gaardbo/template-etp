@@ -1,10 +1,15 @@
 aside.sidebar{
-    background-color: $theme-dark-bg-color;
-    padding: $standard-padding 0;
+    padding: 0;
+
 
     .sidebar-list{
-        padding-top: $standard-padding;
+        padding-top: $standard-padding+$standard-padding;
         padding-bottom: $standard-padding;
+        background-color: $theme-dark-bg-color;
+        margin-right:15px;
+        position: relative;
+        height: 100%;
+
         &>li{
             padding: 10px 0;
 

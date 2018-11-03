@@ -25,27 +25,7 @@ $posts = new WP_Query($args);
 
                 <?php if ($posts->have_posts()): while ($posts->have_posts()) : $posts->the_post(); ?>
 
-                    <!-- article -->
-                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-                        <!-- post thumbnail -->
-                        <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-                            <?php the_post_thumbnail(); // Fullsize image for the single post ?>
-                        <?php endif; ?>
-                        <!-- /post thumbnail -->
-
-                        <!-- post title -->
-                        <h1>
-                            <?php the_title(); ?>
-                        </h1>
-                        <!-- /post title -->
-
-                        <?php the_content(); // Dynamic Content ?>
-
-                        <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
-
-                    </article>
-                    <!-- /article -->
+                    <?php echo get_content_DOM($post);?>
 
                 <?php endwhile; ?>
 
@@ -63,13 +43,7 @@ $posts = new WP_Query($args);
 
             </div>
 
-            <?php
-            if($post_type == 'post' || is_singular('post')){
-                get_sidebar( 'news' );
-            } else {
-                get_sidebar();
-            }
-            ?>
+            <?php get_sidebar('alternative'); ?>
 
         </div>
 

@@ -42,3 +42,37 @@ function get_accordion_DOM_news($link_html, $url, $text, $format, $before, $afte
 
     <?php return ob_get_clean();
 }
+
+
+function get_content_DOM($post){
+    ob_start();?>
+
+    <!-- article -->
+    <article id="post-<?php $post->ID; ?>">
+
+        <!-- post thumbnail -->
+        <?php if ( has_post_thumbnail($post)) : // Check if Thumbnail exists ?>
+            <?php get_the_post_thumbnail($post); // Fullsize image for the single post ?>
+        <?php endif; ?>
+        <!-- /post thumbnail -->
+
+        <!-- post title -->
+        <h1>
+            <?php echo get_the_title($post); ?>
+        </h1>
+        <!-- /post title -->
+
+        <?php
+        $content = $post->post_content;
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        echo $content; ?>
+
+        <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+
+    </article>
+    <!-- /article -->
+
+    <?php
+    return ob_get_clean();
+}

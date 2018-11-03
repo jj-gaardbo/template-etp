@@ -84,7 +84,7 @@ function get_the_page_children($postID){
 }
 
 function has_children($postID) {
-    $children = get_pages( array( 'child_of' => $postID ) );
+    $children = get_pages( array( 'child_of' => $postID, 'hierarchical' => 1 ) );
     if( count( $children ) == 0 ) {
         return false;
     } else {
