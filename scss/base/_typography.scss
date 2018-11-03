@@ -9,8 +9,23 @@
 }
 
 @font-face {
+    font-family: 'Source Sans Pro Bold';
+    src: url(../fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf);
+}
+
+@font-face {
     font-family: 'Source Sans Pro';
     src: url(../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Source Sans Pro Italic';
+    src: url(../fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf);
+}
+
+@font-face {
+    font-family: 'Source Sans Pro Bold Italic';
+    src: url(../fonts/Source_Sans_Pro/SourceSansPro-BoldItalic.ttf);
 }
 
 body{
@@ -39,6 +54,18 @@ p{
     font-size: $pSize;
     line-height: 1.2em;
     margin-bottom: 1.1em;
+}
+
+strong{
+    font-family: $theme-font-text-bold;
+}
+
+em{
+    font-family: $theme-font-text-em;
+
+    strong{
+        font-family: $theme-font-text-strong-em;
+    }
 }
 
 ul, ol, dl{

@@ -3,7 +3,7 @@
     padding-right: $standard-padding;
 
     h1,h2,h3,h4,h5,h6{
-        font-family: 'Source Serif Pro', serif;
+        font-family: $theme-font-heading;
         margin-bottom: 1em;
         line-height: 1.1em;
     }
@@ -80,7 +80,7 @@
             max-width: 100%;
         }
         p{
-            font-family: 'Source Sans Pro SemiBold';
+            font-family: $theme-font-text-semi-bold;
             font-size: $pSize;
             margin-bottom: 0;
             padding: 10px 10px 0 10px;
@@ -92,7 +92,7 @@
             padding-bottom: 0;
         }
 
-        font-family: 'Source Sans Pro SemiBold';
+        font-family: $theme-font-text-semi-bold;
         position: relative;
 
         span.caption-container{
@@ -113,6 +113,23 @@
 
     img.alignright, img.alignleft{
         max-width: 50%;
+    }
+
+    blockquote{
+        p{
+            margin-bottom: 0;
+        }
+        border-left: $standard-border-width solid $theme-dark-blue;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        &:before{
+            color: $theme-dark-blue;
+            font-family: 'Font Awesome 5 Free';
+            content: '\f10d';
+            display: block;
+            padding-bottom: 10px;
+        }
     }
 
 }

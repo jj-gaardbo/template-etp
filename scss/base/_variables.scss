@@ -14,8 +14,13 @@ $footer-padding: 48px;
 
 
 //Fonts
-$theme-font-heading: 'Source Serif Pro', sans-serif;
+$theme-font-heading: 'Source Serif Pro', serif;
 $theme-font-text: 'Source Sans Pro', sans-serif;
+
+$theme-font-text-semi-bold: 'Source Sans Pro SemiBold', sans-serif;
+$theme-font-text-bold: 'Source Sans Pro Bold', sans-serif;
+$theme-font-text-em: 'Source Sans Pro Italic', sans-serif;
+$theme-font-text-strong-em: 'Source Sans Pro Bold Italic';
 
 //Typography
 $h1Size: 2em;
