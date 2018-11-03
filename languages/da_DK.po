@@ -198,3 +198,6 @@ msgstr "ETP Consult - Præsentation"
 
 msgid "Search"
 msgstr "Søg"
+
+msgid "Upload a logo"
+msgstr "Upload et logo"

@@ -457,12 +457,6 @@ function custom_shortcode($atts, $content = null)
     return '<div class="custom-shortcode">' . do_shortcode($content) . '</div>';
 }
 
-/**
- * Loads all the needed files for setting up the theme
- */
-//require "plugins/advanced-custom-fields/acf.php";
-
-
 if ( ! file_exists( get_template_directory() . '/includes/class-wp-bootstrap-navwalker.php' ) ) {
     // file does not exist... return an error.
     return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
@@ -526,3 +520,20 @@ add_filter( 'get_archives_link', function( $link_html, $url, $text, $format, $be
     return $link_html;
 
 }, 10, 6 );
+
+function etp_theme_customizer( $wp_customize ) {
+    $wp_customize->add_section( 'etp_logo_section' , array(
+        'title'       => __( 'Logo', 'etp-consult' ),
+        'priority'    => 30,
+        'description' => __('Upload a logo', 'etp-consult')
+    ) );
+
+    $wp_customize->add_setting( 'etp_logo' );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'etp_logo', array(
+        'label'    => __( 'Logo', 'etp-consult' ),
+        'section'  => 'etp_logo_section',
+        'settings' => 'etp_logo',
+    ) ) );
+}
+add_action( 'customize_register', 'etp_theme_customizer' );
