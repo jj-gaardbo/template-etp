@@ -1,27 +1,31 @@
 <!-- header -->
 <header class="header row clear" role="banner">
 
-    <div class="<?php echo get_full_width_classes();?>">
+    <div class="container">
 
-        <div class="container">
+        <div class="row">
 
-            <!-- logo -->
-            <div class="logo">
+            <div class="<?php echo get_full_width_classes();?>">
 
-                <?php $homeUrl = home_url(); ?>
+                <!-- logo -->
+                <div class="logo">
 
-                <?php if ( get_theme_mod( 'etp_logo' ) ) : ?>
-                    <a href="<?php echo $homeUrl; ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
-                        <img src="<?php echo esc_url( get_theme_mod( 'etp_logo' ) ); ?>" alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="logo-img">
-                    </a>
-                <?php else : ?>
-                    <a href="<?php echo $homeUrl; ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="logo-img">
-                    </a>
-                <?php endif; ?>
+                    <?php $homeUrl = home_url(); ?>
+
+                    <?php if ( get_theme_mod( 'etp_logo' ) ) : ?>
+                        <a href="<?php echo $homeUrl; ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+                            <img src="<?php echo esc_url( get_theme_mod( 'etp_logo' ) ); ?>" alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="logo-img">
+                        </a>
+                    <?php else : ?>
+                        <a href="<?php echo $homeUrl; ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="logo-img">
+                        </a>
+                    <?php endif; ?>
+
+                </div>
+                <!-- /logo -->
 
             </div>
-            <!-- /logo -->
 
         </div>
 

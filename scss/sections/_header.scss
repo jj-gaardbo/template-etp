@@ -1,6 +1,9 @@
 .header{
+    left: 0;
     margin-top: $top-navigation-height;
+    margin-left: 0!important;
+    margin-right: 0!important;
     z-index: 100;
     position: fixed;
-    width: 100vw;
+    width: 100%;
 }
