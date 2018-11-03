@@ -17,6 +17,15 @@ $footer-padding: 48px;
 $theme-font-heading: 'Source Serif Pro', sans-serif;
 $theme-font-text: 'Source Sans Pro', sans-serif;
 
+//Typography
+$h1Size: 2em;
+$h2Size: 1.8em;
+$h3Size: 1.6em;
+$h4Size: 1.4em;
+$h5Size: 1.2em;
+$h6Size: 1em;
+$pSize: 12pt;
+
 
 //Colors
 $theme-white: #ffffff;
@@ -31,7 +40,6 @@ $theme-logo-brown-lighter: #CFCFA6;
 
 $theme-logo-orange: #EE800C;
 $theme-logo-orange-lighter: #F59644;
-
 
 //Breakpoints
 $breakpoints: (

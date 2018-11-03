@@ -1,0 +1,118 @@
+.page-content .page-content-inner{
+    box-sizing: border-box;
+    padding-right: $standard-padding;
+
+    h1,h2,h3,h4,h5,h6{
+        font-family: 'Source Serif Pro', serif;
+        margin-bottom: 1em;
+        line-height: 1.1em;
+    }
+
+    h1{
+        font-size: $h1Size;
+    }
+
+    h2{
+        font-size: $h2Size;
+    }
+
+    h3{
+        font-size: $h3Size;
+    }
+
+    h4{
+        font-size: $h4Size;
+    }
+
+    h5{
+        font-size: $h5Size;
+    }
+
+    h6{
+        font-size: $h6Size;
+    }
+
+    p{
+        line-height: 1.2em;
+        margin-bottom: 1.1em;
+    }
+
+    ul{
+        list-style: disc;
+        padding-left: 15px;
+    }
+
+    ol{
+        list-style: disc;
+        padding-left: 15px;
+    }
+
+    a{
+        color: $theme-font-color;
+        text-decoration: underline;
+        @include color_transition();
+
+        &:hover{
+            color: $theme-logo-brown;
+        }
+    }
+
+    .thumbnail-container{
+        float: left;
+        width: 100%;
+        position: relative;
+        background-color: $theme-light-bg-color;
+        margin-bottom: $standard-padding;
+        text-align: center;
+        padding: 10px;
+        @include boxsize();
+    }
+
+    .wp-caption{
+        margin-bottom: $standard-padding;
+        background-color: $theme-light-bg-color;
+        border: none;
+        padding: 10px;
+
+        text-align: right;
+
+        img{
+            max-width: 100%;
+        }
+        p{
+            font-family: 'Source Sans Pro SemiBold';
+            font-size: $pSize;
+            margin-bottom: 0;
+            padding: 10px 10px 0 10px;
+        }
+    }
+
+    .attachment-has-caption{
+        img{
+            padding-bottom: 0;
+        }
+
+        font-family: 'Source Sans Pro SemiBold';
+        position: relative;
+
+        span.caption-container{
+            text-align: right;
+            float: left;
+            height: auto;
+            display: block;
+            width: 100%;
+            position: relative;
+        }
+
+        p{
+            margin-bottom: 0;
+            width: 100%;
+            padding: 10px 10px 0 10px;
+        }
+    }
+
+    img.alignright, img.alignleft{
+        max-width: 50%;
+    }
+
+}

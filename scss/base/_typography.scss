@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: 'Source Sans Pro SemiBold';
+    src: url(../fonts/Source_Sans_Pro/SourceSansPro-SemiBold.ttf);
+}
+
+@font-face {
     font-family: 'Source Sans Pro';
     src: url(../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf);
 }
@@ -17,20 +22,29 @@ a{
 }
 
 h1{
-    font-size: 2em;
+    font-size: $h1Size;
     font-family: 'Source Serif Pro', serif;
     margin-bottom: 1em;
     line-height: 1.1em;
 }
 
 h2{
-    font-size: 1.7em;
+    font-size: $h2Size;
     font-family: 'Source Sans Pro', sans-serif;
     margin-bottom: 1em;
     line-height: 1.1em;
 }
 
 p{
+    font-size: $pSize;
     line-height: 1.2em;
     margin-bottom: 1.1em;
+}
+
+ul, ol, dl{
+    line-height: 1.2em;
+    margin-bottom: 1.1em;
+    margin-left: 0;
+    padding-left: 0;
+
 }

@@ -537,3 +537,16 @@ function etp_theme_customizer( $wp_customize ) {
     ) ) );
 }
 add_action( 'customize_register', 'etp_theme_customizer' );
+
+add_filter('attachment_fields_to_edit', 'edit_media_custom_field', 11, 2 );
+add_filter('attachment_fields_to_save', 'save_media_custom_field', 11, 2 );
+
+function edit_media_custom_field( $form_fields, $post ) {
+    $form_fields['caption_en'] = array( 'label' => 'Caption (EN)', 'input' => 'textarea', 'value' => get_post_meta( $post->ID, '_caption_en', true ) );
+    return $form_fields;
+}
+
+function save_media_custom_field( $post, $attachment ) {
+    update_post_meta( $post['ID'], '_caption_en', $attachment['caption_en'] );
+    return $post;
+}

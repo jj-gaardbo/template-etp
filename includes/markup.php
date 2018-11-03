@@ -51,8 +51,31 @@ function get_content_DOM($post){
     <article id="post-<?php $post->ID; ?>">
 
         <!-- post thumbnail -->
-        <?php if ( has_post_thumbnail($post)) : // Check if Thumbnail exists ?>
-            <?php get_the_post_thumbnail($post); // Fullsize image for the single post ?>
+        <?php if ( has_post_thumbnail($post)) : // Check if Thumbnail exists
+            $classThumb = 'thumbnail-container';
+            if(pll_current_language( 'slug' ) == 'en'){
+                $imageID = get_post_thumbnail_id();
+                $caption = get_post_meta( $imageID, '_caption_en', true );
+            } else {
+                $caption = get_the_post_thumbnail_caption($post);
+            }
+            if(clean_string($caption) !== ''){
+                $classThumb .= ' attachment-has-caption';
+            }
+            ?>
+            <div class="<?php echo $classThumb; ?>">
+                <?php echo get_the_post_thumbnail($post); // Fullsize image for the single post ?>
+                <?php
+                if(clean_string($caption) !== ''){?>
+                    <span class="caption-container">
+                        <p>
+                            <?php echo $caption; ?>
+                        </p>
+                    </span>
+                <?php } ?>
+            </div>
+
+
         <?php endif; ?>
         <!-- /post thumbnail -->
 
@@ -72,6 +95,20 @@ function get_content_DOM($post){
 
     </article>
     <!-- /article -->
+
+    <!-- Modal -->
+    <div class="modal image-lightbox" id="image-lightbox-modal">
+        <div class="modal-sandbox"></div>
+        <div class="modal-box">
+            <div class="modal-header">
+                <span><?php _e('ETP Consult', 'etp-consult'); ?></span>
+                <i class="fas fa-times close-modal"></i>
+            </div>
+            <div class="modal-body">
+                <button class="btn-theme btn-theme-dark-blue close-modal"><?php _e('Close', 'etp-consult')?></button>
+            </div>
+        </div>
+    </div>
 
     <?php
     return ob_get_clean();
