@@ -12,7 +12,6 @@
 @import "sections/header";
 @import "sections/logo";
 @import "sections/modal";
-@import "sections/search_results";
 @import "sections/sidebar";
 @import "sections/page_content";
 @import "sections/slider";
@@ -30,6 +29,7 @@
 
 @import "sections/footer";
 @import "sections/cookie";
+@import "sections/search_results";
 
 body{
     background-color: $theme-light-bg-color;

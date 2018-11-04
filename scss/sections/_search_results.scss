@@ -1,5 +1,52 @@
 .search-results{
 
-    
+    .page-content-inner{
+        padding-right: 0!important;
+    }
+
+    article{
+        position: relative;
+        height: 210px;
+        overflow-y: hidden;
+        @include respond-below('md'){
+            height: auto;
+        }
+
+
+        h2{
+            width: 100%;
+            float: left;
+            margin-bottom: 0px!important;
+            a{
+                text-decoration: none!important;
+            }
+
+        }
+
+        p{
+            float: left;
+            display: block;
+            width: 100%;
+        }
+
+        .view-article{
+            margin-top: $standard-padding;
+            color: $theme-white!important;
+            text-decoration: none!important;
+            float: left;
+        }
+
+        img{
+            max-width: 200px;
+            position: relative;
+            right: 0;
+            float: right;
+
+            @include respond-below('md'){
+                display: none;
+            }
+        }
+
+    }
 
 }

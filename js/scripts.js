@@ -42,7 +42,7 @@
     function init_active_nav(){
         var menuItems = $('.menu li');
         var body = $('body').data('page-post-type');
-        if($('body').hasClass("404")){
+        if($('body').hasClass("404") || $('body').hasClass("search")){
             return;
         }
         $.each(menuItems, function(){

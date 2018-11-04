@@ -130,7 +130,9 @@ function pagination()
         'base' => str_replace($big, '%#%', get_pagenum_link($big)),
         'format' => '?paged=%#%',
         'current' => max(1, get_query_var('paged')),
-        'total' => $wp_query->max_num_pages
+        'total' => $wp_query->max_num_pages,
+        'prev_text' => __('Previous', 'etp-consult'),
+        'next_text' => __('Next', 'etp-consult'),
     ));
 }
 
@@ -143,7 +145,7 @@ function html5wp_index($length) // Create 20 Word Callback for Index page Excerp
 // Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
 function html5wp_custom_post($length)
 {
-    return 40;
+    return 35;
 }
 
 // Create the Custom Excerpts callback
@@ -167,7 +169,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'etp-consult') . '</a>';
+    return '<br /><a class="btn-theme btn-theme-dark-blue view-article" href="' . get_permalink($post->ID) . '">' . __('Read More', 'etp-consult') . '</a>';
 }
 
 // Remove 'text/css' from our enqueued stylesheet

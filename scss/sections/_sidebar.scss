@@ -9,6 +9,9 @@ aside.sidebar{
         margin-right:15px;
         position: relative;
         height: 100%;
+        @include respond-below('md'){
+            margin-right: 0;
+        }
 
         &>li{
             padding: 10px 0;

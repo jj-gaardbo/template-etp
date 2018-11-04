@@ -7,7 +7,7 @@
             <div class="<?php echo get_full_width_classes();?>">
 
 
-                <ul class="language-switcher">
+                <ul class="language-switcher hide-on-mobile">
                     <?php pll_the_languages(array(
                         'show_flags' => 0,
                         'show_names' => 1,

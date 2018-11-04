@@ -211,6 +211,18 @@ msgstr "Kontakt person"
 msgid "Send email"
 msgstr "Send email"
 
+msgid "%s Search results for "
+msgstr "%s Søgeresultater for "
+
+msgid "Previous"
+msgstr "Forrige"
+
+msgid "Next"
+msgstr "Næste"
+
+
+
+
 
 
 

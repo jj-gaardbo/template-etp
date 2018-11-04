@@ -1,6 +1,19 @@
 .overview-container{
-    width: 100%;
+    width: 100%!important;
+    float: none;
+    @include respond-below('md'){
+        margin-right: 0;
+        margin-left: 0;
+        float: none;
+        width: 100%!important;
+    }
+
     .overview-item{
+        @include respond-below('md'){
+            margin-right: 0;
+            width: 100%!important;
+            float: none;
+        }
         @include boxsize();
         padding: 10px;
         text-align: center;
@@ -53,6 +66,14 @@
         text-align: center;
         background-color: $theme-light-bg-color;
         height: 130px;
+
+
+        @include respond-below('md'){
+            margin-right: 0;
+            width: 100%!important;
+            float: none;
+        }
+
     }
 
 }

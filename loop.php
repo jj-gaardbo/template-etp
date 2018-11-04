@@ -1,29 +1,41 @@
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 	<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class("row"); ?>>
 
-		<!-- post thumbnail -->
-		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-			</a>
-		<?php endif; ?>
-		<!-- /post thumbnail -->
+        <div class="col-xl-12">
+            <!-- post title -->
+            <h2>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+            </h2>
+            <!-- /post title -->
+        </div>
 
-		<!-- post title -->
-		<h2>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-		</h2>
-		<!-- /post title -->
+        <div class="col-xl-9">
 
-		<!-- post details -->
-		<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-		<!-- /post details -->
+		    <?php
+            $excerpts = get_the_excerpt($post);
+            if($excerpts === ''){
+                echo wpautop(truncate_text(get_the_content(), 300));
+            } else {
+                echo wpautop(truncate_text($excerpts, 300));
+            }?>
 
-		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+            <a class="btn-theme btn-theme-dark-blue view-article" href="<?php the_permalink();?>"><?php _e('Read More', 'etp-consult');?></a>
 
-		<?php edit_post_link(); ?>
+        </div>
+
+        <?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
+        <div class="col-xl-3">
+            <!-- post thumbnail -->
+
+                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                    <?php the_post_thumbnail(); // Declare pixel size you need inside the array ?>
+                </a>
+
+            <!-- /post thumbnail -->
+        </div>
+        <?php endif; ?>
 
 	</article>
 	<!-- /article -->
@@ -34,7 +46,7 @@
 
 	<!-- article -->
 	<article>
-		<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+		<h2><?php _e( 'Sorry, nothing to display.', 'etp-consult' ); ?></h2>
 	</article>
 	<!-- /article -->
 

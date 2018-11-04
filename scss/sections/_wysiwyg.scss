@@ -1,6 +1,10 @@
 .page-content .page-content-inner{
     box-sizing: border-box;
     padding-right: $standard-padding;
+    @include respond-below('md'){
+        padding-right: 15px;
+        width: 100%;
+    }
 
     .post-title{
         width: 100%;

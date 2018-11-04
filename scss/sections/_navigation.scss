@@ -27,6 +27,10 @@
         justify-content: flex-end;
         padding: 0;
         position: relative;
+        @include respond-below(md) {
+            right:5px;
+        }
+
         &:before{
             content: "";
             position: absolute;
@@ -64,6 +68,7 @@
 
             @include respond-below(md) {
                 padding-top: 20px;
+                padding-right: $standard-padding;
                 height: auto!important;
                 line-height: 25px!important;
             }
