@@ -1,24 +1,25 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+<section class="page-content row">
 
-			<!-- article -->
-			<article id="post-404">
+    <div class="push"></div>
 
-				<h1><?php _e( 'Page not found', 'etp-consult' ); ?></h1>
-				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'etp-consult' ); ?></a>
-				</h2>
+    <div class="container">
 
-			</article>
-			<!-- /article -->
+        <div class="row">
 
-		</section>
-		<!-- /section -->
-	</main>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 page-content-inner">
 
-<?php get_sidebar(); ?>
+                <?php echo get_field('404_content_'.pll_current_language( 'slug' ), 'options');?>
+
+            </div>
+
+            <?php wp_reset_postdata(); ?>
+
+        </div>
+
+    </div>
+
+</section>
 
 <?php get_footer(); ?>
