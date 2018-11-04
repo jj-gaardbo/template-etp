@@ -4,12 +4,22 @@
         @include boxsize();
         padding: 10px;
         text-align: center;
-
+        position: relative;
 
         a{
-            text-decoration: none!important;
+            position:absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            text-decoration: none!important;
 
+            &:hover{
+                img{
+                    filter: none;
+                    -webkit-filter: grayscale(0%);
+                }
+            }
         }
 
         span{
@@ -23,9 +33,17 @@
         }
 
         img{
+            -webkit-transition: -webkit-filter 0.2s ease;
+            -moz-transition: -webkit-filter 0.2s ease;
+            -o-transition: -webkit-filter 0.2s ease;
+            -ms-transition: -webkit-filter 0.2s ease;
+            transition: -webkit-filter 0.2s ease;
             max-height: 80px;
             padding: 10px;
             margin: 0 auto;
+            filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+            filter: gray; /* IE6-9 */
+            -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
         }
 
     }
