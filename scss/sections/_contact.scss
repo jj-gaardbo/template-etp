@@ -1,0 +1,40 @@
+.contact-content{
+    @include boxsize();
+
+    .contact-item{
+        padding: $standard-padding;
+        background-color: $theme-dark-blue;
+        list-style: none;
+
+        .contact-name{
+            display: block;
+            width: 100%;
+            font-size: $h5Size;
+            margin-bottom: 10px;
+            color: $theme-white;
+        }
+
+        ul{
+            list-style: none;
+            padding-left: 0;
+
+            li{
+                &:first-child{
+                    margin-top: 10px;
+                }
+
+                @include boxsize();
+                margin-bottom: 10px;
+                color: $theme-white;
+
+                a{
+                    color: $theme-white;
+                    text-decoration: none;
+                }
+
+            }
+
+        }
+
+    }
+}

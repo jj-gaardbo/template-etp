@@ -201,3 +201,16 @@ msgstr "Søg"
 
 msgid "Upload a logo"
 msgstr "Upload et logo"
+
+msgid "Related content"
+msgstr "Relateret indhold"
+
+msgid "Contact person"
+msgstr "Kontakt person"
+
+msgid "Send email"
+msgstr "Send email"
+
+
+
+

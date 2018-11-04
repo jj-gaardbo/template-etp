@@ -1,0 +1,27 @@
+.related-content{
+    @include boxsize();
+
+    ul.related-item{
+        padding: $standard-padding;
+        background-color: $theme-light-bg-color;
+        list-style: none;
+
+        li{
+            margin-bottom: $standard-padding+$standard-padding;
+
+            .related-title{
+                display: block;
+                width: 100%;
+                font-size: $h5Size;
+                margin-bottom: 10px;
+            }
+
+            a{
+                color: $theme-white!important;
+                text-decoration: none;
+            }
+
+        }
+
+    }
+}

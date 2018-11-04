@@ -94,29 +94,94 @@ function get_content_DOM($post){
 
         <?php
         $content = $post->post_content;
-        $content = apply_filters('the_content', $content);
-        $content = str_replace(']]>', ']]&gt;', $content);
-        echo $content; ?>
-
-        <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+        if(clean_string($content) !== ''){
+            $content = apply_filters('the_content', $content);
+            $content = str_replace(']]>', ']]&gt;', $content);
+            echo $content;
+        }?>
 
     </article>
     <!-- /article -->
 
-    <!-- Modal -->
-    <div class="modal image-lightbox" id="image-lightbox-modal">
-        <div class="modal-sandbox"></div>
-        <div class="modal-box">
-            <div class="modal-header">
-                <span><?php _e('ETP Consult', 'etp-consult'); ?></span>
-                <i class="fas fa-times close-modal"></i>
+    <div class="additional-content row">
+
+        <?php if($contactPerson = get_field('expertise_emp', $post->ID)):?>
+
+            <div class="contact-content col-xl-4">
+
+                <h3><?php _e('Contact person', 'etp-consult');?></h3>
+
+                <?php if(is_object($contactPerson)):?>
+
+                    <div class="contact-item <?php echo get_full_width_classes();?>">
+
+                        <strong class="contact-name">
+                            <?php echo $contactPerson->post_title; ?>
+                        </strong>
+
+                        <img src="<?php echo get_the_post_thumbnail_url($contactPerson); ?>" alt=""/>
+
+                        <ul>
+                            <?php if( get_field('emp_title', $contactPerson->ID) ): ?>
+                                <li><?php the_field('emp_title', $contactPerson->ID); ?></li>
+                            <?php endif;?>
+
+                            <?php if( get_field('emp_education', $contactPerson->ID) ): ?>
+                                <li><?php the_field('emp_education', $contactPerson->ID); ?></li>
+                            <?php endif;?>
+
+                            <?php if( get_field('emp_phone', $contactPerson->ID) ): ?>
+                                <li><a href="tel:<?php echo str_replace(' ', '', get_field('emp_phone', $contactPerson->ID)); ?>"><?php the_field('emp_phone', $contactPerson->ID); ?></a></li>
+                            <?php endif;?>
+
+                            <?php if( get_field('emp_email', $contactPerson->ID) ): ?>
+                                <li><a href="mailto:<?php echo str_replace(' ', '', get_field('emp_email', $contactPerson->ID)); ?>"><?php _e('Send email', 'etp-consult')?></a></li>
+                            <?php endif;?>
+
+                        </ul>
+
+                    </div>
+
+                <?php endif; ?>
             </div>
-            <div class="modal-body">
-                <button class="btn-theme btn-theme-dark-blue close-modal"><?php _e('Close', 'etp-consult')?></button>
+
+        <?php endif; ?>
+
+        <?php if($relatedContent = get_field('related_content', $post->ID)):?>
+
+            <div class="related-content col-xl-4">
+
+                <h3><?php _e('Related content', 'etp-consult');?></h3>
+
+                <?php if(is_array($relatedContent)):?>
+
+                    <ul class="related-item <?php echo get_full_width_classes();?>">
+
+                        <?php foreach($relatedContent as $related): ?>
+
+                            <li>
+                                <strong class="related-title">
+                                    <?php echo $related->post_title; ?>
+                                </strong>
+
+                                <p><?php echo truncate_text($related->post_content, 70); ?></p>
+
+                                <a class="btn-theme btn-theme-dark-blue" href="<?php echo get_permalink($related); ?>">
+                                    <?php _e("Read More", "etp-consult"); ?>
+                                </a>
+                            </li>
+
+                        <?php endforeach; ?>
+                    </ul>
+
+                <?php endif; ?>
             </div>
-        </div>
+
+        <?php endif; ?>
+
     </div>
 
+    <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
     <?php
     return ob_get_clean();
 }
