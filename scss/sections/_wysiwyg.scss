@@ -2,6 +2,22 @@
     box-sizing: border-box;
     padding-right: $standard-padding;
 
+    .post-title{
+        width: 100%;
+        float: left;
+        h1{
+            display: inline-block;
+            float: left;
+        }
+
+        img{
+            margin-top: -15px;
+            max-height: 50px;
+            display: inline-block;
+            float: right;
+        }
+    }
+
     h1,h2,h3,h4,h5,h6{
         font-family: $theme-font-heading;
         margin-bottom: 1em;

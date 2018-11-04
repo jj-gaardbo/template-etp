@@ -1,0 +1,40 @@
+.overview-container{
+    width: 100%;
+    .overview-item{
+        @include boxsize();
+        padding: 10px;
+        text-align: center;
+
+
+        a{
+            text-decoration: none!important;
+            width: 100%;
+
+        }
+
+        span{
+            width: 100%;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            font-size: 1em;
+            position: absolute;
+            bottom: 0;
+        }
+
+        img{
+            max-height: 80px;
+            padding: 10px;
+            margin: 0 auto;
+        }
+
+    }
+
+    .overview-item-inner{
+        position: relative;
+        text-align: center;
+        background-color: $theme-light-bg-color;
+        height: 130px;
+    }
+
+}

@@ -104,3 +104,11 @@ function has_parent() {
         return $children;
     }
 }
+
+function get_all_references(){
+    $refs = new WP_Query(array(
+        'post_type' => 'references',
+        'posts_per_page' => -1,
+    ));
+    return $refs->posts;
+}
