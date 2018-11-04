@@ -33,6 +33,12 @@
     }
 }
 
+.lang-item{
+    @include respond-above('md'){
+        display: none;
+    }
+}
+
 .hide-on-mobile{
     @include respond-below('md'){
         display: none;
