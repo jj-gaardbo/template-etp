@@ -41,6 +41,15 @@ h1{
     font-family: 'Source Serif Pro', serif;
     margin-bottom: 1em;
     line-height: 1.1em;
+    .post-edit-link{
+        &:before{
+            font-family: 'Font Awesome 5 Free';
+            font-size: 16pt;
+            content: '\f044';
+            display: inline-block;
+
+        }
+    }
 }
 
 h2{

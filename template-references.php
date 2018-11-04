@@ -17,6 +17,7 @@ get_header(); ?>
                     <div class="post-title clearfix">
                         <h1>
                             <?php echo get_the_title($post); ?>
+                            <?php edit_post_link(""); // Always handy to have Edit Post Links available ?>
                         </h1>
                     </div>
                     <!-- /post title -->
@@ -89,8 +90,6 @@ get_header(); ?>
                         </div>
 
                     <?php endif; ?>
-
-                    <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
                 </article>
                 <!-- /article -->

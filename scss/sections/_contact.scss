@@ -38,3 +38,53 @@
 
     }
 }
+
+
+.page-template-template-contact{
+
+    .section-contact{
+
+        .contact-item{
+            padding: $standard-padding 0;
+            color: $theme-font-color;
+            background: none;
+        }
+
+        strong{
+            color: $theme-font-color!important;
+        }
+
+        i{
+            display: block;
+            text-align: center;
+            &:before{
+                float: none;
+                text-align: center;
+                display: block;
+                margin: 0 auto;
+            }
+
+            font-size: 8em;
+        }
+
+        ul{
+
+            li{
+                &:first-child{
+                    margin-top: 0!important;
+                }
+                @include boxsize();
+                margin-bottom: 10px;
+                color: $theme-font-color!important;
+
+                a{
+                    color: $theme-font-color!important;
+                    text-decoration: none;
+                }
+
+            }
+
+        }
+
+    }
+}

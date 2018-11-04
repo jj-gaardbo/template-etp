@@ -1,0 +1,36 @@
+.addresses{
+
+    .address-item{
+        margin-bottom: $standard-padding;
+        @include boxsize();
+
+
+        .address-item-inner{
+            @include boxsize();
+            padding: $standard-padding;
+            background-color: $theme-light-bg-color;
+        }
+
+        .address-image{
+
+            img{
+                width: 100%;
+            }
+
+        }
+
+        .address-text{
+            color: $theme-font-color;
+        }
+
+        .address-title{
+            display: block;
+            width: 100%;
+            font-size: $h5Size;
+            margin-bottom: $standard-padding;
+
+        }
+
+    }
+
+}

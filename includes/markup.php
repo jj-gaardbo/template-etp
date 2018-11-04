@@ -54,6 +54,7 @@ function get_content_DOM($post){
         <div class="post-title">
             <h1>
                 <?php echo get_the_title($post); ?>
+                <?php edit_post_link(""); // Always handy to have Edit Post Links available ?>
             </h1>
             <?php if( $logo = get_field('ref_logo', $post->ID) ): ?>
                 <a href="<?php echo get_field('ref_url', $post->ID); ?>" target="_blank">
@@ -181,7 +182,6 @@ function get_content_DOM($post){
 
     </div>
 
-    <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
     <?php
     return ob_get_clean();
 }
