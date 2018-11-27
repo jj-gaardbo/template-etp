@@ -1,0 +1,38 @@
+.social{
+    background-color: $theme-font-color;
+
+    .container{
+        padding-top: $standard-padding;
+    }
+
+    ul{
+        float: right;
+        li{
+            padding-left: $standard-padding;
+            float: right;
+            display: inline-block;
+
+            a{
+
+                i{
+                    color: $theme-white;
+                    font-family: 'Font Awesome 5 Brands';
+                    font-size: $h4Size;
+                    @include color_transition();
+                }
+
+                &:hover{
+
+                    i{
+                        color: $theme-logo-brown;
+                    }
+                }
+            }
+
+            &.social-icon{
+                font-family: 'Font Awesome 5 Brands';
+            }
+
+        }
+    }
+}
