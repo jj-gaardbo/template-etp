@@ -48,13 +48,13 @@ function get_content_DOM($post){
     ob_start();?>
 
     <!-- article -->
-    <article id="post-<?php $post->ID; ?>">
+    <article id="post-<?php $post->ID; ?>" class="clearfix">
 
         <!-- post title -->
         <div class="post-title">
             <h1>
-                <?php echo get_the_title($post); ?>
-                <?php edit_post_link(""); // Always handy to have Edit Post Links available ?>
+                <?php echo $post->post_title; ?>
+                <?php edit_post_link(""); ?>
             </h1>
             <?php if( $logo = get_field('ref_logo', $post->ID) ): ?>
                 <a href="<?php echo get_field('ref_url', $post->ID); ?>" target="_blank">
@@ -94,8 +94,8 @@ function get_content_DOM($post){
         <!-- /post thumbnail -->
 
         <?php
-        $content = $post->post_content;
-        if(clean_string($content) !== ''){
+        $content = trim($post->post_content);
+        if($content !== ''){
             $content = apply_filters('the_content', $content);
             $content = str_replace(']]>', ']]&gt;', $content);
             echo $content;

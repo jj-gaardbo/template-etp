@@ -106,9 +106,19 @@ function has_parent() {
 }
 
 function get_all_references(){
-    $refs = new WP_Query(array(
+    $list = get_field('control_sidebar_ref', get_the_ID());
+    $args = array(
         'post_type' => 'references',
         'posts_per_page' => -1,
-    ));
+    );
+    $id = array();
+    if(!empty($list) && is_array($list)){
+       foreach ($list as $link){
+           $id[] = url_to_postid($link);
+       }
+       $args['orderby'] = 'post__in';
+       $args['post__in'] = $id;
+    }
+    $refs = new WP_Query($args);
     return $refs->posts;
 }
