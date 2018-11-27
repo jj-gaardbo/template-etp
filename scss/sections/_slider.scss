@@ -124,7 +124,7 @@
 
     h1{
         font-family: $theme-font-heading;
-        font-size: 3em;
+        font-size: $h1Size;
         margin-bottom: $standard-padding;
         color: $theme-font-color;
 
@@ -135,7 +135,6 @@
 
     p{
         margin-bottom: $standard-padding;
-        font-size: 1.1em;
         color: $theme-font-color;
 
         @include respond-below(md) {

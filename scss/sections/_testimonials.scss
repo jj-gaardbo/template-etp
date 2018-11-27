@@ -3,29 +3,33 @@
     padding-bottom: $section-padding;
     background-color: $theme-dark-bg-color;
 
-    .testimonial{
+    .has-video.testimonial{
         border-right: $standard-border-width solid $theme-font-color;
         @include respond-below(lg) {
             border-right: 0px;
         }
 
-        blockquote {
-            color: $theme-font-color;
-            font-size: 2em;
-            @include boxsize();
-            text-align: right;
-            @include respond-below(lg) {
-                text-align: left;
-                font-size: 1.3em;
-            }
+    }
 
-
-            i{
-                padding-right: $standard-padding;
-            }
-
+    blockquote {
+        color: $theme-font-color;
+        font-size: $h1Size;
+        @include boxsize();
+        text-align: right;
+        @include respond-below(lg) {
+            text-align: left;
+            font-size: 1.3em;
         }
 
+
+        i{
+            padding-right: $standard-padding;
+        }
+
+    }
+
+    .no-video > blockquote{
+        text-align: center;
     }
 
     .presentation{
