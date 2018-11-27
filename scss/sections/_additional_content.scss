@@ -2,16 +2,15 @@
     @include boxsize();
 
     .additional-content-inner{
-        background-color: $theme-logo-brown;
+        background-color: $theme-dark-bg-color;
         padding: $standard-padding;
 
-        h1,h2,h3,h4,h5,h6,p,blockquote,a,p,li,strong,i{
-            color: $theme-white;
+        a{
             @include color_transition();
         }
 
         a:hover{
-            color: $theme-dark-blue;
+            color: $theme-logo-brown;
         }
     }
 
