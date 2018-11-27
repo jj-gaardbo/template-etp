@@ -180,6 +180,22 @@ function get_content_DOM($post){
 
         <?php endif; ?>
 
+        <?php if($additionalContentHead = get_field('add_cont_head', $post->ID)): ?>
+
+            <div class="additional-content col-xl-4">
+
+                <h3><?php echo $additionalContentHead;?></h3>
+
+                <div class="additional-content-inner">
+
+                    <?php echo get_field('add_cont_wysiwyg', $post->ID);?>
+
+                </div>
+
+            </div>
+
+        <?php endif;?>
+
     </div>
 
     <?php

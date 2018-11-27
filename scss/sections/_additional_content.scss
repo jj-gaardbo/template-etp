@@ -1,0 +1,18 @@
+.additional-content{
+    @include boxsize();
+
+    .additional-content-inner{
+        background-color: $theme-logo-brown;
+        padding: $standard-padding;
+
+        h1,h2,h3,h4,h5,h6,p,blockquote,a,p,li,strong,i{
+            color: $theme-white;
+            @include color_transition();
+        }
+
+        a:hover{
+            color: $theme-dark-blue;
+        }
+    }
+
+}
