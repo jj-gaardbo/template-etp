@@ -33,6 +33,12 @@ aside.sidebar{
             &:first-child{
                 padding-top: 0;
             }
+
+            &.active{
+                a{
+                    color: $theme-logo-brown;
+                }
+            }
         }
     }
 

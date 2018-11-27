@@ -4,10 +4,20 @@ global $wp_query;
 $original_query = $wp_query;
 if($post->post_content === ''){
     $wp_query = null;
-    $wp_query = new WP_Query( array(
+    $args = array(
         'post_type' => 'cases',
         'posts_per_page' => 1
-    ) );
+    );
+
+    //$pageCase = get_field('pt_cases_'.pll_current_language( 'slug' ),'options');
+    $list = get_field('control_sidebar_case', get_the_ID());
+
+    if(!empty($list) && is_array($list)){
+        $args['p'] = url_to_postid($list[0]);
+    }
+
+    $wp_query = new WP_Query( $args );
+
 }
 ?>
 

@@ -7,20 +7,19 @@
     $post_type = get_current_page_post_type(get_the_ID());
 
         $args = array(
-            'type'            => 'yearly',
-            'limit'           => '',
-            'format'          => 'accordion',
-            'before'          => '',
-            'after'           => '',
-            'show_post_count' => false,
-            'echo'            => 1,
-            'order'           => 'DESC',
             'post_type'       => 'post'
         );
 
         wp_reset_postdata();
-        return wp_get_archives( $args );
-    ?>
+        $query = new WP_Query( $args );
+        foreach($query->posts as $postObj): ?>
+            <li <?php echo $postObj->ID == get_the_ID() ? 'class="active"' : ''; ?>>
+                <a href="<?php echo get_permalink($postObj) ?>">
+                    <?php echo get_the_title($postObj); ?>
+                </a>
+            </li>
+        <?php endforeach;?>
+
     </ul>
 
 </aside>
