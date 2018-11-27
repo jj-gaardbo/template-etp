@@ -5,7 +5,17 @@
         padding-top: $standard-padding;
     }
 
+    p{
+        padding-right: $standard-padding;
+        border-right: $standard-border-width solid $theme-white;
+        line-height: $h3Size;
+        float: right;
+        color: $theme-white;
+        display: inline-block;
+    }
+
     ul{
+        display: inline-block;
         float: right;
         li{
             padding-left: $standard-padding;

@@ -1,9 +1,10 @@
 <?php
+$copyright = get_field('copyright','options');
 $linkedIn = get_field('social_li','options');
 $facebook = get_field('social_fb','options');
 $twitter = get_field('social_tw','options');
 $instagram = get_field('social_in','options');
-if(!$linkedIn && !$facebook && !$twitter && !$instagram){return;}
+if(!$copyright && !$linkedIn && !$facebook && !$twitter && !$instagram){return;}
 ?>
 <div class="social row">
 
@@ -51,6 +52,10 @@ if(!$linkedIn && !$facebook && !$twitter && !$instagram){return;}
                     <?php endif; ?>
 
                 </ul>
+
+                <?php if($copyright !== ''):?>
+                    <p><?php echo $copyright;?></p>
+                <?php endif; ?>
 
             </div>
 
