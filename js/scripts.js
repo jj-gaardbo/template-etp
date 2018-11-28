@@ -125,7 +125,7 @@
 
         slider.bxSlider({
             mode: 'fade',
-            speed: 1500,
+            speed: slider.data("speed")*1000,
             slideMargin: 0,
             infiniteLoop: true,
             slideWidth: '100%',
@@ -138,7 +138,7 @@
             controls: false,
             autoStart: true,
             auto: true,
-            pause: 8000
+            pause: slider.data("pause")*1000
         });
 
     }

@@ -4,7 +4,7 @@ if( have_rows('fp_slider') ):?>
 
 <section class="fp-slider-section row">
 
-    <ul class="fp-slider" id="fp-slider">
+    <ul class="fp-slider" id="fp-slider" data-speed="<?php echo get_field("fp_slider_speed", get_the_ID()); ?>" data-pause="<?php echo get_field("fp_slider_pause", get_the_ID()); ?>">
 
         <?php
 
