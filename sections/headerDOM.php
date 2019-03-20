@@ -14,7 +14,10 @@
 
                     <?php if ( get_theme_mod( 'etp_logo' ) ) : ?>
                         <a href="<?php echo $homeUrl; ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
-                            <img src="<?php echo esc_url( get_theme_mod( 'etp_logo' ) ); ?>" alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' class="logo-img">
+                            <h1>
+                                <img src="<?php echo esc_url( get_theme_mod( 'etp_logo' ) ); ?>" alt='<?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?>' class="logo-img">
+                                &nbsp;
+                            </h1>
                         </a>
                     <?php else : ?>
                         <a href="<?php echo $homeUrl; ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>

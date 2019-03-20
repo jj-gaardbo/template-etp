@@ -117,12 +117,12 @@
     background-color: $theme-dark-bg-color;
     padding:$standard-padding;
 
-    h1,p,a{
+    h2,p,a{
         display: block;
         float: left;
     }
 
-    h1{
+    h2{
         font-family: $theme-font-heading;
         font-size: $h1Size;
         margin-bottom: $standard-padding;

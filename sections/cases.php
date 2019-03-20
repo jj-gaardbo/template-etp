@@ -14,7 +14,7 @@ if( have_rows('fp_cases') ):?>
 
             <div class="<?php echo get_full_width_classes();?> clearfix">
 
-                <h1><?php _e('Highlighted Cases', 'etp-consult')?></h1>
+                <h2><?php _e('Highlighted Cases', 'etp-consult')?></h2>
 
             </div>
 
@@ -39,7 +39,7 @@ if( have_rows('fp_cases') ):?>
 
                 <div class="case-item-inner clearfix">
 
-                    <h2><?php echo truncate_text($case->post_title, 50); ?></h2>
+                    <h3><?php echo truncate_text($case->post_title, 50); ?></h3>
 
                     <?php if(has_excerpt($case->ID)) :?>
 

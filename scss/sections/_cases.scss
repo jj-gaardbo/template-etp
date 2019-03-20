@@ -3,12 +3,18 @@
     padding-bottom: $section-padding;
     background-color: $theme-white;
 
+    h2{
+        font-size: $h1Size;
+        font-family: $theme-font-heading;
+    }
+
     .case-item{
         margin-bottom: $standard-padding;
 
-        h2{
+        h3{
             min-height: 65px;
             font-size: $h2Size;
+            font-family: $theme-font-text;
         }
 
         .case-item-inner{

@@ -4,9 +4,14 @@
     padding-bottom: $section-padding;
     background-color: $theme-light-bg-color;
 
+    h2{
+        font-size: $h1Size;
+        font-family: $theme-font-heading;
+    }
+
     .news-item.news-item-first{
         border-right: $standard-border-width solid $theme-font-color;
-        h2{
+        h3{
             padding-top: $standard-padding;
         }
 
@@ -39,7 +44,7 @@
 
         li{
             &:last-child{
-                h2{
+                h3{
                     margin-bottom: 0;
                 }
             }
@@ -48,12 +53,17 @@
 
     .news-item-list.news-item a{
         color: $theme-font-color;
-
-        h2{
-        }
-
         &:hover{
             color: $theme-logo-brown;
+        }
+    }
+
+    .news-item{
+        h3{
+            font-family: $theme-font-text;
+            font-size: $h3Size;
+            margin-bottom: 1em;
+            line-height: 1.1em;
         }
     }
 

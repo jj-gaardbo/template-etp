@@ -15,7 +15,7 @@ if ( $query->have_posts() ) : ?>
 
                 <div class="<?php echo get_full_width_classes(); ?>">
 
-                    <h1><?php _e('Latest News', 'etp-consult');?></h1>
+                    <h2><?php _e('Latest News', 'etp-consult');?></h2>
 
                 </div>
 
@@ -27,7 +27,7 @@ if ( $query->have_posts() ) : ?>
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 news-item news-item-first clear">
 
-                        <h2 class="post-item-title"><?php echo $post->post_title; ?></h2>
+                        <h3 class="post-item-title"><?php echo $post->post_title; ?></h3>
 
                         <div class="post-item-excerpt">
                             <?php if(has_excerpt($post->ID)) :?>
@@ -58,7 +58,7 @@ if ( $query->have_posts() ) : ?>
                             <li>
 
                                 <a href="<?php echo get_permalink($post->ID); ?>" class="post-item-link">
-                                    <h2 class="post-item-title"><?php echo truncate_text($post->post_title, 50); ?></h2>
+                                    <h3 class="post-item-title"><?php echo truncate_text($post->post_title, 50); ?></h3>
                                 </a>
 
                             </li>

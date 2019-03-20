@@ -37,7 +37,7 @@ if( have_rows('fp_slider') ):?>
 
                                     <?php if($heading):?>
 
-                                        <h1><?php echo $heading; ?></h1>
+                                        <h2><?php echo $heading; ?></h2>
 
                                     <?php endif; ?>
 
