@@ -220,6 +220,8 @@ msgstr "Forrige"
 msgid "Next"
 msgstr "Næste"
 
+msgid "Cookie policy"
+msgstr "Cookie politik"
 
 
 

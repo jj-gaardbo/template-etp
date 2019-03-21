@@ -14,6 +14,17 @@
         display: inline-block;
     }
 
+    a{
+        display: inline-block;
+        line-height: $h3Size;
+        float: right;
+        padding-right: $standard-padding;
+        color: $theme-white;
+        &:hover{
+            color: $theme-logo-brown;
+        }
+    }
+
     ul{
         display: inline-block;
         float: right;

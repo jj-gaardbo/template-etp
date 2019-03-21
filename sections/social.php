@@ -1,5 +1,6 @@
 <?php
 $copyright = get_field('copyright','options');
+$cookiePolicy = get_field('cookie_page_'.pll_current_language( 'slug' ),'options');
 $linkedIn = get_field('social_li','options');
 $facebook = get_field('social_fb','options');
 $twitter = get_field('social_tw','options');
@@ -54,7 +55,15 @@ if(!$copyright && !$linkedIn && !$facebook && !$twitter && !$instagram){return;}
                 </ul>
 
                 <?php if($copyright !== ''):?>
+
                     <p><?php echo $copyright;?></p>
+
+                <?php endif; ?>
+
+                <?php if($cookiePolicy !== ''):?>
+
+                    <a href="<?php echo get_field('cookie_page_'.pll_current_language( 'slug' ),'options');?>"><?php _e('Cookie policy','etp-consult');?></a>
+
                 <?php endif; ?>
 
             </div>
