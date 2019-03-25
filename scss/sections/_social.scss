@@ -12,6 +12,13 @@
         float: right;
         color: $theme-white;
         display: inline-block;
+
+        @include respond-below(sm) {
+            border: none;
+            display: inline-block;
+            font-size: $smallSize;
+            line-height: 2.2em;
+        }
     }
 
     a{
@@ -23,15 +30,27 @@
         &:hover{
             color: $theme-logo-brown;
         }
+        @include respond-below(sm) {
+            font-size: $smallSize;
+            line-height: 2.2em;
+        }
     }
 
     ul{
         display: inline-block;
         float: right;
+        @include respond-below(sm) {
+            text-align: center;
+        }
         li{
             padding-left: $standard-padding;
             float: right;
             display: inline-block;
+            @include respond-below(sm) {
+                float: none;
+                padding-left: 0;
+                margin: 0 auto;
+            }
 
             a{
 
@@ -47,6 +66,12 @@
                     i{
                         color: $theme-logo-brown;
                     }
+                }
+
+                @include respond-below(sm) {
+                    margin: 0 auto;
+                    float: none;
+                    padding-right: 0;
                 }
             }
 
