@@ -13,31 +13,8 @@
         init_scrollto_button();
 
         init_video_lightbox();
-
-        init_cookie();
 		
 	});
-
-    function init_cookie(){
-        var cookieBox = $("#cookie");
-        var allow = $("#allow_link");
-        allow.on("click", function(e){
-            setCookie("allow_cookies", "true", 700);
-            cookieBox.animate({
-                opacity : 0,
-                height : 0
-            });
-            return false;
-        });
-
-        var myCookie = getCookie("allow_cookies");
-        if (myCookie == null) {
-            cookieBox.show();
-        }
-        else {
-            cookieBox.hide();
-        }
-    }
 
     function init_active_nav(){
         var menuItems = $('.menu li');
@@ -141,30 +118,6 @@
             pause: slider.data("pause")*1000
         });
 
-    }
-
-    function setCookie(c_name,value,exdays){
-        var exdate=new Date();
-        exdate.setDate(exdate.getDate() + exdays);
-        var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString() + ";path=/;");
-        document.cookie=c_name + "=" + c_value;
-    }
-
-    function getCookie(name) {
-        var dc = document.cookie;
-        var prefix = name + "=";
-        var begin = dc.indexOf("; " + prefix);
-        if (begin == -1) {
-            begin = dc.indexOf(prefix);
-            if (begin != 0) return null;
-        } else {
-            begin += 2;
-            var end = document.cookie.indexOf(";", begin);
-            if (end == -1) {
-                end = dc.length;
-            }
-        }
-        return unescape(dc.substring(begin + prefix.length, end));
     }
 
 })(jQuery, this);
